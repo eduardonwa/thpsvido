@@ -25,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['components.notification-bell'], function ($view) {
-            $view->with('notifications', auth()->user()->unreadNotifications, auth()->user()->readNotifications);
-        });
+
     }
 }

@@ -30,18 +30,23 @@
                 wire:key="results-{{ $thug['_id'] }}"
             >
                 <img 
-                    class="carousel-cell hover:rounded-md rounded-sm
-                        transition-all duration-500 ease-in-out transform hover:scale-105 object-contain"
+                    class="carousel-cell hover:rounded-md rounded-sm object-contain"
                     src="{{ $thug['Thumbnail'] }}" 
                     alt=""
                 >
                     <div
                         class="relative bottom-0 w-full h-full p-1 flex items-center justify-center rounded-md rounded-t-none bg-green-700"
                         x-show="show"
+                        x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-90"
                     >
                         <svg
                             fill="currentColor"
-                            class="absolute left-2 w-8 h-8 cursor-pointer hover:bg-red-700 rounded-full transition ease-in-out duration-300"
+                            class="absolute left-2 w-8 h-8 cursor-pointer hover:bg-red-700 rounded-full"
                             viewBox="0 0 20 20" 
                             version="1.1" 
                             xmlns:xlink="http://www.w3.org/1999/xlink"
