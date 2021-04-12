@@ -24,7 +24,7 @@
 
         @forelse ($thps4Results as $thps4)
             <div 
-                class="box w-full h-full relative pb-44 px-1"
+                class="box w-full h-full relative pb-44 px-1 opacity-60 hover:opacity-100"
                 x-data="{show: false}"
                 x-on:mouseenter="show = true"
                 x-on:mouseleave="show = false"
@@ -32,11 +32,11 @@
             >
                 <img 
                     class="carousel-cell hover:rounded-md rounded-sm object-contain"
-                    src="{{ $thps4['Thumbnail'] }}" 
+                    src="{{ $thps4['Thumbnail'] }}"
                     alt=""
                 >
                     <div
-                        class="relative bottom-0 w-full h-full p-1 flex items-center justify-center rounded-md rounded-t-none bg-green-700"
+                        class="video-info relative bottom-0 w-full h-full p-1 flex items-center justify-center rounded-md rounded-t-none bg-green-700"
                         x-show="show"
                         x-transition:enter="transition ease-out duration-500"
                         x-transition:enter-start="opacity-0 transform scale-90"

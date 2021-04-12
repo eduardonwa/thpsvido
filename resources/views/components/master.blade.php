@@ -8,15 +8,12 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
-        <!-- splide -->
-        <link rel="stylesheet" href="{{asset('css/splide-skyblue.min.css')}}">
-        <!-- splidejs -->
-        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
         <style>
+            /* Scrollbar modal */
             .scroll-hide {
                 scrollbar-width: none;
             }
+            /* Thumbnails */
             .box {
                 width: 200px;
                 height: 200px;
@@ -26,6 +23,16 @@
                 height: 237px;
                 z-index: 20;
             }
+            .video-info {
+                opacity: 0;
+            }
+            .box:hover > .video-info {
+                opacity: 1;
+            }
+            .box:hover + .video-info {
+                opacity: 0;
+            }
+            /* Flickity */
             .flickity-button:hover {
                 background: none;
             }
@@ -42,12 +49,6 @@
             }
             .flickity-button {
                 background: transparent;
-            }
-            .video-info {
-                opacity: 0;
-            }
-            .box:hover > .video-info {
-                opacity: 1;
             }
         </style>
         @livewireStyles
@@ -78,30 +79,22 @@
                         <path d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"></path>
                     </svg>
                 </button>
-            </div>
+            </div> <!-- sidebar -->
 
             <div class="w-full">
                 <div class="mx-auto p-4">
-                    {{ $slot }} <!-- welcome -->
+                    {{ $slot }}
                 </div>
-            </div>
+            </div> <!-- welcome layout -->
 
         </div>
 
         <x-search-modal name="search">   
         </x-search-modal>
 
-        <script>
-            new Splide( '.splide', {
-                type   : 'fade',
-                perPage: 1,
-                speed: 800,
-                rewind: true,
-                arrows: false,
-                pagination: true,
-            } ).mount();
-        </script>
-
+        <!-- videojs -->
+        <script src="{{ asset ('/js/Youtube.min.js') }}"></script>
+        <!-- flickity -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         @livewireScripts
     </body>
