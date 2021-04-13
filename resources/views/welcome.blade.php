@@ -1,7 +1,7 @@
 <x-master>    
     <div class="my-8">
-
-        <x-main-slider/>
+        
+        <x-main-slider/>   
 
         @include('_categories')
 
@@ -16,4 +16,15 @@
         </div>
 
     </div>
+    <script>
+        function showLoading() {
+            document.querySelector('#loading').classList.add('loading');
+            document.querySelector('#loading-content').classList.add('loading-content');
+        }
+
+        function hideLoading() {
+            document.querySelector('#loading').classList.remove('loading');
+            document.querySelector('#loading-content').classList.remove('loading-content');
+        }
+    </script>
 </x-master>
