@@ -53,56 +53,8 @@
                 background: transparent;
             }
             /* VideoJS */
-            .video-js .vjs-big-play-button {
-                top: 22rem;
-                left: 3rem;
-                border: none;
-                height: 3em;
-                width: 8em;
-                background-color:black;
-                font-size: 1.2rem;
-                font-weight: bold;
-                border: none;
-            }
-            .video-js:hover > .vjs-big-play-button {
-                background-color: black;
-            }
-            .vjs-big-play-button .vjs-icon-placeholder {
-                display: none;
-            }
-            .video-js .vjs-big-play-button::after {
-                content: "PLAY NOW";
-            }
-            .video-js .vjs-big-play-button:hover {
-                background-color: #10b981;
-            }
             .vjs-waiting .vjs-loading-spinner {
                 display: none;
-            }
-            .loading {
-                z-index: 100;
-                position: absolute;
-                top: 0;
-                left:-5px;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,0.4);
-            }
-            .loading-content {
-                position: absolute;
-                border: 16px solid #f3f3f3; /* Light grey */
-                border-top: 16px solid #3498db; /* Blue */
-                border-radius: 50%;
-                width: 50px;
-                height: 50px;
-                top: 40%;
-                left:35%;
-                animation: spin 2s linear infinite;
-            }
-                
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
             }
         </style>
         @livewireStyles
