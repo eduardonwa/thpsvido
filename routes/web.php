@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PlayVideosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Route::get('/', function () {
 Route::get('test', function (){
     return view('test');
 });
+
+Route::get('/play', [PlayVideosController::class, 'show'])->name('videos.show');
 
 Route::middleware(['auth'])->group(function () {
     

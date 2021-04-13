@@ -45,16 +45,16 @@
     <video
       id="vid1"
       class="video-js"
-      controls
+      autoplay="true"
       preload="metadata"
       height="600px"
-      poster="img/thpsvido-logo.svg"
       width="1230px"
       data-setup='{ 
         "techOrder": ["youtube"], 
         "sources": [{ "type": "video/youtube", 
         "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
-        "fluid": true 
+        "fluid": true,
+        "autoplay": true
       }'
     >
     </video>
@@ -62,21 +62,21 @@
 </div>
 
 <script>
-  /* 
-  const player = function() {
-    autoplay: 'muted',
-    controls: true,
-    fluid: true,
-    load: true
-  }
-  */
-
     window.configureLoading = function() {
-        return {
-          loaded: true,
-            // Use Video JS https://docs.videojs.com/html5#load to wait for loading and then change the loaded to true
-        }
+      
+      var player = videojs('vid1');
+        player.ready(function() {
+        setTimeout(function() {
+            player.autoplay('muted');
+        }, 1000);
+      });
+
+      return {
+        loaded: true,
+          // Use Video JS https://docs.videojs.com/html5#load to wait for loading and then change the loaded to true
+      }
     }
+
 </script>
 
 
