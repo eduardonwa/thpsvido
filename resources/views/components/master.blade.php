@@ -53,6 +53,12 @@
                 background: transparent;
             }
             /* VideoJS */
+            .video-js {
+                overflow: hidden;
+            }
+            .video-js .vjs-big-play-button {
+                display: none;
+            }
             .vjs-waiting .vjs-loading-spinner {
                 display: none;
             }
