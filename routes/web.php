@@ -23,7 +23,8 @@ Route::get('test', function (){
     return view('test');
 });
 
-Route::get('/play', [PlayVideosController::class, 'show'])->name('videos.show');
+Route::get('/play/thps4', [PlayVideosController::class, 'thps4'])->name('videos.thps4');
+Route::get('/play/thug', [PlayVideosController::class, 'thug'])->name('videos.thug');
 
 Route::middleware(['auth'])->group(function () {
     

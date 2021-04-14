@@ -22,7 +22,7 @@
         class="m-4 h-40"
     >
 
-        @forelse ($thps4Results as $thps4)
+        @forelse ($thps4Results as $key => $thps4)
             <div 
                 class="box w-full h-full relative pb-44 px-1 opacity-60 hover:opacity-100"
                 x-data="{show: false}"
@@ -45,7 +45,7 @@
                         x-transition:leave-start="opacity-100 transform scale-100"
                         x-transition:leave-end="opacity-0 transform scale-90"
                     >
-                        <a class="relative bottom-4" href="{{route('videos.show')}}">
+                        <a class="relative bottom-4" href="play/thps4/{{ $key }}">
                             <svg
                                 fill="currentColor"
                                 class="absolute left-2 w-8 h-8 cursor-pointer hover:bg-red-700 rounded-full"
