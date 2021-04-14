@@ -51,7 +51,7 @@
 
         <x-slot name="footer">
             <a href="#" class="p-2 transition-all duration-200 hover:bg-red-500 rounded-md bg-gray-500">Cancel</a>
-            <a href="#user-delete-modal" class="p-2 transition-all duration-200 bg-blue-600 hover:bg-blue-800 rounded-md bg-blue-500">Continue</a>
+            <a href="#user-delete-modal" class="p-2 transition-all duration-200 hover:bg-blue-800 rounded-md bg-blue-500">Continue</a>
         </x-slot>
 
     </x-search-modal>
@@ -68,7 +68,7 @@
         <x-slot name="footer">
             <a href="#" class="p-2 transition-all duration-200 hover:bg-red-500 rounded-md bg-gray-500">Cancel</a>
             <button 
-                class="p-2 transition-all duration-200 bg-blue-600 hover:bg-blue-800 rounded-md bg-blue-500"
+                class="p-2 transition-all duration-200 hover:bg-blue-800 rounded-md bg-blue-500"
                 x-on:click="document.querySelector('#delete-user-form').submit()"
             >
                 Continue

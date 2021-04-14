@@ -18,6 +18,11 @@ module.exports = {
             height: {
                 hero: '370px',
             },
+            screens: {
+                iPsix: '667px',
+                iPxs: '812px',
+                iPad: '768px'
+            }
         },
     },
 
