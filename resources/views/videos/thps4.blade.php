@@ -54,7 +54,7 @@
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/embed/x{{ $thps4Video['ID'] }}"}],
+            "src": "http://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"}],
             "fluid": true,
             "autoplay": true
         });

@@ -78,7 +78,7 @@
       }, 1000);
 
       myPlayer = this;
-      if (myPlayer.muted(true)) {
+      if (myPlayer.muted()) {
         const myButton = document.querySelector('.mute-control');
         myButton.addEventListener('click', function() { myPlayer.muted(false); })
       }

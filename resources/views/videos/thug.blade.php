@@ -50,22 +50,22 @@
     <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
     <script src="{{ asset ('/js/Youtube.min.js') }}"></script>
     
-        <script>
-            var player = videojs('vid1', { 
-                "techOrder": ["youtube"], 
-                "sources": [{ "type": "video/youtube", 
-                "src": "https://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"}], 
-                "fluid": true,
-                "autoplay": true
-            });
-            player.ready(function() {
-                setTimeout(function() {
-                    player.autoplay('muted');
-                    player.volume(0.5);
-                    player.fluid('true')
-                }, 2000);
-            });
-        </script>
+    <script>
+        var player = videojs('vid1', { 
+            "techOrder": ["youtube"], 
+            "sources": [{ "type": "video/youtube", 
+            "src": "http://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"}], 
+            "fluid": true,
+            "autoplay": true
+        });
+        player.ready(function() {
+            setTimeout(function() {
+                player.autoplay('muted');
+                player.volume(0.5);
+                player.fluid('true')
+            }, 2000);
+        });
+    </script>
 
 </body>
 </html>
