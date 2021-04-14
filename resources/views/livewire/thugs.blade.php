@@ -44,7 +44,7 @@
                         x-transition:leave-start="opacity-100 transform scale-100"
                         x-transition:leave-end="opacity-0 transform scale-90"
                     >
-                        <a class="relative bottom-4" href="play/thug/{{ $key }}">
+                        <a class="relative bottom-4" href="videos/thug/{{ $key }}">
                             <svg
                                 fill="currentColor"
                                 class="absolute left-2 w-8 h-8 cursor-pointer hover:bg-red-700 rounded-full"

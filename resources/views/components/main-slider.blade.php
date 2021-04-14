@@ -1,18 +1,6 @@
 <div
-  x-data="configureLoading()"
   class="mb-12 mx-auto rounded-md relative bg-gray-900 h-full shadow-xl"
 >    
-  <div 
-    x-show="!loaded"
-    class="animate-pulse mb-12 mx-auto rounded-md bg-gray-700"
-    style="height: 600px;"
-  > 
-  {{-- Loading state --}} 
-  </div>
-
-  <div 
-    x-show="loaded"
-  >
 
   <div
     class="overflow-hidden text-sm px-8 lg:w-96
@@ -41,9 +29,8 @@
     </a>
 
     <a
-      class="bg-gray-500 hover:bg-indigo-500 rounded-full border 
-              hidden sm:block relative cursor-pointer" 
-      onclick="toggleMute()"
+      class="mute-control bg-gray-500 hover:bg-indigo-500 rounded-full border 
+              hidden sm:block relative cursor-pointer"
     >
       <svg
         class="w-7 h-7 p-1" 
@@ -60,47 +47,43 @@
 
   </div> {{-- Description overlay --}}
 
-    <video
-      id="vid1"
-      class="video-js"
-      autoplay="true"
-      muted
-      preload="metadata"
-      height="600px"
-      width="1230px"
-      data-setup='{ 
-        "techOrder": ["youtube"], 
-        "sources": [{ "type": "video/youtube", 
-        "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
-        "fluid": true,
-        "autoplay": true
-      }'
-    >
-    </video>
-  </div>
+  <video
+    id="vid1"
+    class="video-js"
+    autoplay="true"
+    preload="auto"
+    height="600px"
+    width="1230px"
+  >
+  </video>
+
 </div>
 
-<script>
-    window.configureLoading = function() {
-      
-      var player = videojs('vid1');
-        player.ready(function() {
-        setTimeout(function() {
-            player.autoplay('muted');
-        }, 1000);
-      });
+<script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+<script src="{{ asset ('/js/Youtube.min.js') }}"></script>
 
-      return {
-        loaded: true,
-          // Use Video JS https://docs.videojs.com/html5#load to wait for loading and then change the loaded to true
+<script>  
+  var player = videojs('vid1', { 
+    "techOrder": ["youtube"], 
+    "sources": [{ "type": "video/youtube", 
+    "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
+    "fluid": true,
+    "autoplay": true,
+  });
+
+  player.ready(function() {
+
+      setTimeout(function() {
+          player.autoplay('muted');
+      }, 1000);
+
+      myPlayer = this;
+      if (myPlayer.muted(true)) {
+        const myButton = document.querySelector('.mute-control');
+        myButton.addEventListener('click', function() { myPlayer.muted(false); })
       }
-    }
 
-    function toggleMute() {
-      var video=document.getElementById("myVideo");
-      video.muted = !video.muted;
-    }
-
+  });
 </script>
 
 

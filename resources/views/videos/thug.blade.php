@@ -6,7 +6,7 @@
     <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>Document</title>
+    <title>THPS Vido</title>
     <style>
     .video-js .vjs-big-play-button {
         display: none;

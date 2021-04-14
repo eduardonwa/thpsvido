@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>THPS Videotheque</title>
+        <title>THPS Vido</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -104,9 +104,6 @@
         <x-search-modal name="search">   
         </x-search-modal>
 
-        <!-- videojs -->
-        <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
-        <script src="{{ asset ('/js/Youtube.min.js') }}"></script>
         <!-- flickity -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         @livewireScripts
