@@ -34,9 +34,7 @@
                         >
                         <div class="flex flex-col">
                             
-                            @if ($search)
-                                <a href="videos/keyword/{{ $key }}">
-                            @elseif ($search === 'thps2')
+                            @if ($search === 'thps2')
                                 <a href="videos/thps2/{{ $key }}">
                             @elseif ($search === 'thps3')
                                 <a href="videos/thps3/{{ $key }}">
