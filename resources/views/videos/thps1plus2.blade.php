@@ -6,7 +6,7 @@
     <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>{{$thugVideo['Title']}}</title>
+    <title>{{$thps1plus2Video['Title']}}</title>
     <style>
     .video-js .vjs-big-play-button {
         display: none;
@@ -54,21 +54,16 @@
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"}], 
+            "src": "http://www.youtube.com/watch?v={{ $thps1plus2Video['ID'] }}"}],
             "fluid": true,
             "autoplay": true
         });
         player.ready(function() {
-            
             setTimeout(function() {
                 player.autoplay('muted');
+                player.volume(0.5);
                 player.fluid('true')
             }, 2000);
-
-            myPlayer = this;
-            if (myPlayer.muted()) {
-                myPlayer.muted(false);
-            }
         });
     </script>
 

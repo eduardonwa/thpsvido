@@ -33,7 +33,36 @@
                             alt="search results"
                         >
                         <div class="flex flex-col">
-                        <a href="videos/game/{{ $key }}"><p class="text-xs md:text-sm h-auto font-bold md:font-extrabold">{{ $result['Title'] }}</p></a>
+                            
+                            @if ($search)
+                                <a href="videos/keyword/{{ $key }}">
+                            @elseif ($search === 'thps2')
+                                <a href="videos/thps2/{{ $key }}">
+                            @elseif ($search === 'thps3')
+                                <a href="videos/thps3/{{ $key }}">
+                            @elseif ($search === 'thps4')
+                                <a href="videos/thps4/{{ $key }}">
+                            @elseif ($search === 'thug')
+                                <a href="videos/thug/{{ $key }}">
+                            @elseif ($search === 'thug2')
+                                <a href="videos/thug2/{{ $key }}">
+                            @elseif ($search === 'thaw')
+                                <a href="videos/thaw/{{ $key }}">
+                            @elseif ($search === 'thp8')
+                                <a href="videos/thp8/{{ $key }}">
+                            @elseif ($search === 'thpg')
+                                <a href="videos/thpg/{{ $key }}">
+                            @elseif ($search === 'thps1plus2')
+                                <a href="videos/thps1plus2/{{ $key }}">
+                            @elseif ($search === 'thug pro')
+                                <a href="videos/thugpro/{{ $key }}">
+                            @endif
+
+                            <p class="text-xs md:text-sm h-auto font-bold md:font-extrabold">
+                                {{ $result['Title'] }}
+                            </p>
+                        </a>
+
                         <p class="text-sm">{{ $result['Game'] }}</p>
                         <p class="text-sm">{{ $result['newduration'] }}</p>
                         </div>

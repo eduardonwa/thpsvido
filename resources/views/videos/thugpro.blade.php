@@ -6,7 +6,7 @@
     <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>THPS Vido</title>
+    <title>{{$thugProVideo['Title']}}</title>
     <style>
     .video-js .vjs-big-play-button {
         display: none;
@@ -54,7 +54,7 @@
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/watch?v={{ $searchedGame['ID'] }}"}],
+            "src": "http://www.youtube.com/watch?v={{ $thugProVideo['ID'] }}"}],
             "fluid": true,
             "autoplay": true
         });
