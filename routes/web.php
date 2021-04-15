@@ -23,8 +23,9 @@ Route::get('test', function (){
     return view('test');
 });
 
+Route::get('/videos/game/{key}', [PlayVideosController::class, 'searchByGame']);
 Route::get('/videos/thps4/{key}', [PlayVideosController::class, 'thps4']);
-Route::get('/videos/thug/{thug}', [PlayVideosController::class, 'thug']);
+Route::get('/videos/thug/{key}', [PlayVideosController::class, 'thug']);
 
 Route::middleware(['auth'])->group(function () {
     

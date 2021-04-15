@@ -69,20 +69,12 @@
     "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
     "fluid": true,
     "autoplay": true,
-  });
-
+  })
   player.ready(function() {
 
       setTimeout(function() {
           player.autoplay('muted');
       }, 1000);
-
-      myPlayer = this;
-      if (myPlayer.muted()) {
-        const myButton = document.querySelector('.mute-control');
-        myButton.addEventListener('click', function() { myPlayer.muted(false); })
-      }
-
   });
 </script>
 

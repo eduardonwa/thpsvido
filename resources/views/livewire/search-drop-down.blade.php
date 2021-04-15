@@ -21,7 +21,7 @@
     <main class="flex items-center flex-col text-white relative">
         @if (strlen($search) > 2)
             <ul class="h-auto rounded-md p-2 mt-4 mb-4">
-                @forelse($searchResults as $result)
+                @forelse($searchResults as $key => $result)
                     <li class="w-full h-auto flex items-center space-x-2 mb-4 
                                 border-b-2 rounded-sm border-gray-500 border-opacity-40
                                 hover:border-opacity-0 hover:rounded-b-2xl hover:bg-green-500 hover:bg-opacity-70 
@@ -33,7 +33,7 @@
                             alt="search results"
                         >
                         <div class="flex flex-col">
-                        <p class="text-xs md:text-sm h-auto font-bold md:font-extrabold">{{ $result['Title'] }}</p>
+                        <a href="videos/game/{{ $key }}"><p class="text-xs md:text-sm h-auto font-bold md:font-extrabold">{{ $result['Title'] }}</p></a>
                         <p class="text-sm">{{ $result['Game'] }}</p>
                         <p class="text-sm">{{ $result['newduration'] }}</p>
                         </div>

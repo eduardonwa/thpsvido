@@ -54,21 +54,16 @@
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"}], 
+            "src": "http://www.youtube.com/watch?v={{ $searchedGame['ID'] }}"}],
             "fluid": true,
             "autoplay": true
         });
         player.ready(function() {
-            
             setTimeout(function() {
                 player.autoplay('muted');
+                player.volume(0.5);
                 player.fluid('true')
             }, 2000);
-
-            myPlayer = this;
-            if (myPlayer.muted()) {
-                myPlayer.muted(false);
-            }
         });
     </script>
 
