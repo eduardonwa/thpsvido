@@ -7,12 +7,12 @@
           flex flex-col justify-center items-start space-y-1 md:space-y-8
           bg-gradient-to-r from-black h-full w-1/2 absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">THPS4 Rewind: Summer of 2003 Unreleased (Edited by Maxfli)</h1>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Hardcoding Title & URL</h1>
 
     <a
       class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4
           bg-black font-bold border-gray-700 hover:bg-green-500 hover:shadow-xl transition ease-in-out"
-      href="#"
+      href="/videos/thug/15"
     >
     <svg
       class="w-6 h-6"
@@ -62,8 +62,8 @@
   var player = videojs('vid1', { 
     "techOrder": ["youtube"], 
     "sources": [{ "type": "video/youtube", 
-    "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
-    "autoplay": true,
+    "src": "https://www.youtube.com/watch?v=0n23qfZawlw"}], 
+    "autoplay": false,
     "aspectRatio": '13:5',
     "poster": '/img/thpsvido-logo.svg'
   })
