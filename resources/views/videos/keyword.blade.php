@@ -52,6 +52,7 @@
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
             "src": "http://www.youtube.com/watch?v={{ $keywordVideo['ID'] }}"}],
+            "controls": true,
             "fluid": true,
             "autoplay": true
         });

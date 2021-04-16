@@ -52,6 +52,7 @@
             "techOrder": ["youtube"], 
             "sources": [{ "type": "video/youtube", 
             "src": "http://www.youtube.com/watch?v={{ $thps1plus2Video['ID'] }}"}],
+            "controls": true,
             "fluid": true,
             "autoplay": true
         });
