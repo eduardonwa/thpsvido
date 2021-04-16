@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class PlayVideosController extends Controller
 {
 /*     public function keywordSearch($keyword)
-    {          
+    {   
         $keywordVideos = Http::get('http://thvid-api.herokuapp.com/videos/keyword/'. $keyword)->json();
         
         $keywordVideo = $keywordVideos[0];

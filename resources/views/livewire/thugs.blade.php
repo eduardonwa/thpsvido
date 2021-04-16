@@ -62,7 +62,7 @@
                         </a>
 
                         <p class="text-sm font-semibold ml-14">
-                            {{ $thug['Title'] }}
+                            {{ Illuminate\Support\Str::limit($thug['Title'], 40) }}
                         </p>
                     </div>
             </div>

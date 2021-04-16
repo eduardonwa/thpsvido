@@ -22,9 +22,6 @@
         <video
             id="vid1"
             class="video-js"
-            controls
-            autoplay="true"
-            preload="auto"
         >
       </video>
 

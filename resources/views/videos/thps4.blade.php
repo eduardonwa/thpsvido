@@ -18,13 +18,10 @@
 </head>
 <body class="bg-black">
 
-    <div class="pt-20 h-full w-screen">
+    <div class="h-full w-screen pt-20">
         <video
             id="vid1"
             class="video-js"
-            controls
-            autoplay="true"
-            preload="auto"
         >
       </video>
 
@@ -62,7 +59,6 @@
             setTimeout(function() {
                 player.autoplay('muted');
                 player.volume(0.5);
-                player.fluid('true')
             }, 2000);
         });
     </script>

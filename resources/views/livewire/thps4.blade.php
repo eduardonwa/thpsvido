@@ -63,7 +63,7 @@
                         </a>
 
                         <p class="text-sm font-semibold ml-14">
-                            {{ $thps4['Title'] }}
+                            {{ Illuminate\Support\Str::limit($thps4['Title'], 40) }}
                         </p>
                     </div>
             </div>

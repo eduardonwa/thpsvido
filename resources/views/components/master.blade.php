@@ -34,6 +34,16 @@
             .box:hover + .video-info {
                 opacity: 0;
             }
+            /* Search Modal */
+            .img-modal-search {
+                z-index: 10;
+            }
+            .play-thumb-icon {
+                opacity: 0;
+            }
+            .img-modal-search:hover + .play-thumb-icon {
+                opacity: 1;
+            }
             /* Flickity */
             .flickity-button:hover {
                 background: none;

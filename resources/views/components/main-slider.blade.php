@@ -50,10 +50,6 @@
   <video
     id="vid1"
     class="video-js"
-    autoplay="true"
-    preload="auto"
-    height="600px"
-    width="1230px"
   >
   </video>
 
@@ -67,14 +63,18 @@
     "techOrder": ["youtube"], 
     "sources": [{ "type": "video/youtube", 
     "src": "https://www.youtube.com/watch?v=zY5nYmTUfnQ"}], 
-    "fluid": true,
     "autoplay": true,
+    "aspectRatio": '13:5',
+    "poster": '/img/thpsvido-logo.svg'
   })
   player.ready(function() {
+    player.autoplay('muted');
+    myPlayer = this;
+    if(myPlayer.muted()) {
+      const myButton = document.getElementsByClassName('mute-control');
+      myButton.addEventListener('click', function() { myPlayer.muted(false); })
+    }
 
-      setTimeout(function() {
-          player.autoplay('muted');
-      }, 1000);
   });
 </script>
 
