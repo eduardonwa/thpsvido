@@ -7,7 +7,7 @@
           flex flex-col justify-center items-start space-y-1 md:space-y-8
           bg-gradient-to-r from-black h-full w-1/2 absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Hardcoding Title & URL</h1>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Phunky Phresh</h1>
 
     <a
       class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4
