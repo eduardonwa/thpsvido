@@ -27,68 +27,47 @@
                                 hover:border-opacity-0 hover:rounded-b-2xl hover:bg-green-500 hover:bg-opacity-70 
                                 transition ease-in-out"
                     >
-                        <div class="relative">
-                            @switch($search)
-                                @case($search === 'thps2')
-                                <a href="videos/thps2/{{ $key }}">
-                                    <x-modal-thumbnail :result="$result"/>
-                                </a>
-                                    @break
-
-                                @case($search === 'thps3')
-                                <a href="videos/thps3/{{ $key }}">
-                                    <x-modal-thumbnail :result="$result"/>
-                                </a>
-                                    @break
-
-                                @default
-                                    Default case...
-                            @endswitch
-{{--                                 @if ($search === 'thps2')
+                        <div class="relative"> 
+                                @if ($search === 'thps2')
                             <a href="videos/thps2/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thps3')
                             <a href="videos/thps3/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thps4')
                             <a href="videos/thps4/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thug')
                             <a href="videos/thug/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thug2')
                             <a href="videos/thug2/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thaw')
                             <a href="videos/thaw/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thp8')
                             <a href="videos/thp8/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thpg')
                             <a href="videos/thpg/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thps1plus2')
                             <a href="videos/thps1plus2/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @elseif ($search === 'thug pro')
                             <a href="videos/thugpro/{{ $key }}">
-                                <x-modal-thumbnail :result="$result"/>
-                            </a>
                                 @else
-                            <a href="">
-                                <x-modal-thumbnail :result="$result"/>
+                                    <a href="">
+                                @endif
+                                <img 
+                                    class="flex-initial img-modal-search w-32 h-auto pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100"
+                                    src="{{ $result['Thumbnail'] }}"
+                                    alt="search results"
+                                >
+                                <svg
+                                    class="play-thumb-icon inset-0 w-10 h-10 absolute"
+                                    viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <g id="Page-1" stroke="none" stroke-width="1" fill="gainsboro" fill-rule="evenodd">
+                                        <g id="icon-shape">
+                                            <polygon id="Rectangle-161" points="4 4 16 10 4 16"></polygon>
+                                        </g>
+                                    </g>
+                                </svg>
                             </a>
-                                @endif --}}
                         </div> 
                         <div class="flex flex-col">
                             <p class="flex-1 text-xs md:text-sm h-auto font-bold md:font-extrabold">
