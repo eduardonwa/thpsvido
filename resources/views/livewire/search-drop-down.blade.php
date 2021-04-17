@@ -48,6 +48,8 @@
                             <a href="videos/thps1plus2/{{ $key }}">
                                 @elseif ($search === 'thug pro')
                             <a href="videos/thugpro/{{ $key }}">
+                                @else
+                                    <a href="">
                                 @endif
                                 <img 
                                     class="flex-initial img-modal-search w-32 h-auto pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100"

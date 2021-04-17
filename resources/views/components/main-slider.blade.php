@@ -11,7 +11,7 @@
 
     <a
       class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4
-          bg-black font-bold border-gray-700 hover:bg-green-500 hover:shadow-xl transition ease-in-out"
+          bg-black font-bold border-gray-700 hover:bg-indigo-500 hover:shadow-xl transition ease-in-out"
       href="/videos/thug/15"
     >
     <svg
@@ -27,10 +27,13 @@
     </svg>
       Play Now
     </a>
-
-    <a
-      class="mute-control bg-gray-500 hover:bg-indigo-500 rounded-full border 
-              hidden sm:block relative cursor-pointer"
+ 
+  
+    <span
+      class="mute-control bg-gray-500 hover:bg-gray-900 rounded-full 
+              hidden sm:block relative cursor-pointer transition ease-in-out"
+      x-data="{ active: false }"
+      x-on:click="active = ! active " :class="{ 'bg-green-500' : active }"
     >
       <svg
         class="w-7 h-7 p-1" 
@@ -43,7 +46,7 @@
           </g>
         </g>
       </svg>
-    </a>
+    </span>
 
   </div> {{-- Description overlay --}}
 
