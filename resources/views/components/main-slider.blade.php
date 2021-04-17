@@ -1,5 +1,5 @@
 <div
-  class="mb-12 mx-auto rounded-md relative bg-gray-900 h-full shadow-xl"
+  class="mb-12 rounded-md relative bg-gray-900 h-full shadow-xl"
 >    
 
   <div
@@ -55,26 +55,27 @@
 
 </div>
 
-<script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
-<script src="{{ asset ('/js/Youtube.min.js') }}"></script>
-
 <script>  
   var player = videojs('vid1', { 
     "techOrder": ["youtube"], 
-    "sources": [{ "type": "video/youtube", 
-    "src": "https://www.youtube.com/watch?v=0n23qfZawlw"}], 
-    "autoplay": false,
+    "sources": [
+      { 
+        "type": "video/youtube", 
+        "src": "https://www.youtube.com/watch?v=0n23qfZawlw"
+      }
+    ], 
     "aspectRatio": '13:5',
     "poster": '/img/thpsvido-logo.svg'
   })
+
   player.ready(function() {
     player.autoplay('muted');
+    
     myPlayer = this;
-    if(myPlayer.muted()) {
-      const myButton = document.getElementsByClassName('mute-control');
-      myButton.addEventListener('click', function() { myPlayer.muted(false); })
-    }
-
+    const myButton = document.querySelector('.mute-control');
+      myButton.addEventListener('click', function() {
+        myPlayer.muted(false);
+      });
   });
 </script>
 

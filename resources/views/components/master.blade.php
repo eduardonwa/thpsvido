@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <!-- videojs -->
         <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
+        <script src="//vjs.zencdn.net/7.10.2/video.min.js"></script>
+        <script src="{{ asset ('/js/Youtube.min.js') }}"></script>
+        
         <style>
             /* Scrollbar modal */
             .scroll-hide {
@@ -104,7 +107,7 @@
             </div> <!-- sidebar -->
 
             <div class="w-full">
-                <div class="mx-auto p-4">
+                <div class="mx-auto">
                     {{ $slot }}
                 </div>
             </div> <!-- welcome layout -->
@@ -113,7 +116,7 @@
 
         <x-search-modal name="search">   
         </x-search-modal>
-
+        
         <!-- flickity -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         @livewireScripts

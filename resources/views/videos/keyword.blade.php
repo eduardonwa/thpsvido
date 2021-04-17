@@ -31,7 +31,7 @@
             class="text-center"
         >
             <p class="text-sm text-gray-500">
-              Mute is enabled by default, sorry for the inconveniences
+              Mute is enabled by default, sorry for that
             </p>
             <p 
                 x-on:click="close = false"
