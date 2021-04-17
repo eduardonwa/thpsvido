@@ -27,8 +27,24 @@
                                 hover:border-opacity-0 hover:rounded-b-2xl hover:bg-green-500 hover:bg-opacity-70 
                                 transition ease-in-out"
                     >
-                        <div class="relative"> 
-                                @if ($search === 'thps2')
+                        <div class="relative">
+                            @switch($search)
+                                @case($search === 'thps2')
+                                <a href="videos/thps2/{{ $key }}">
+                                    <x-modal-thumbnail :result="$result"/>
+                                </a>
+                                    @break
+
+                                @case($search === 'thps3')
+                                <a href="videos/thps3/{{ $key }}">
+                                    <x-modal-thumbnail :result="$result"/>
+                                </a>
+                                    @break
+
+                                @default
+                                    Default case...
+                            @endswitch
+{{--                                 @if ($search === 'thps2')
                             <a href="videos/thps2/{{ $key }}">
                                 <x-modal-thumbnail :result="$result"/>
                             </a>
@@ -72,7 +88,7 @@
                             <a href="">
                                 <x-modal-thumbnail :result="$result"/>
                             </a>
-                                @endif
+                                @endif --}}
                         </div> 
                         <div class="flex flex-col">
                             <p class="flex-1 text-xs md:text-sm h-auto font-bold md:font-extrabold">
