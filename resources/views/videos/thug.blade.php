@@ -50,8 +50,12 @@
     <script>
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
-            "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"}], 
+            "sources": [
+                { 
+                "type": "video/youtube", 
+                "src": "http://www.youtube.com/watch?v={{ $thugVideo['ID'] }}"
+                }
+            ], 
             "controls": true,
             "fluid": true,
             "autoplay": true

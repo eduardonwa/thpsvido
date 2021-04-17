@@ -50,19 +50,32 @@
     <script>
         var player = videojs('vid1', { 
             "techOrder": ["youtube"], 
-            "sources": [{ "type": "video/youtube", 
-            "src": "http://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"}],
+            "sources": [
+             { 
+                "type": "video/youtube", 
+                "src": "http://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"
+             }
+            ],
             "controls": true,
             "fluid": true,
-            "autoplay": true
         });
         player.ready(function() {
             setTimeout(function() {
                 player.autoplay('muted');
-                player.volume(0.5);
+                
+                if(player.muted()) {
+                    player.muted('false');
+                }
+                console.log(videojs('vid1').muted());
             }, 2000);
         });
     </script>
 
 </body>
 </html>
+
+{{--     myPlayer = this;
+    const myButton = document.querySelector('.mute-control');
+      myButton.addEventListener('click', function() {
+        myPlayer.muted(false);
+      }); --}}
