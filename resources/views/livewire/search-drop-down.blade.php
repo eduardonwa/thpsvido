@@ -21,36 +21,14 @@
     <main class="text-white">
         @if (strlen($search) > 2)
             <ul class="h-auto rounded-md p-2 mt-4 mb-4">
-                @forelse($searchResults as $key => $result)
+                @forelse($searchResults as $result)
                     <li class="w-full h-auto flex items-center space-x-2 mb-4 
                                 border-b-2 rounded-sm border-gray-500 border-opacity-40
                                 hover:border-opacity-0 hover:rounded-b-2xl hover:bg-green-500 hover:bg-opacity-70 
                                 transition ease-in-out"
                     >
-                        <div class="relative"> 
-                                @if ($search === 'thps2')
-                            <a href="videos/thps2/{{ $key }}">
-                                @elseif ($search === 'thps3')
-                            <a href="videos/thps3/{{ $key }}">
-                                @elseif ($search === 'thps4')
-                            <a href="videos/thps4/{{ $key }}">
-                                @elseif ($search === 'thug')
-                            <a href="videos/thug/{{ $key }}">
-                                @elseif ($search === 'thug2')
-                            <a href="videos/thug2/{{ $key }}">
-                                @elseif ($search === 'thaw')
-                            <a href="videos/thaw/{{ $key }}">
-                                @elseif ($search === 'thp8')
-                            <a href="videos/thp8/{{ $key }}">
-                                @elseif ($search === 'thpg')
-                            <a href="videos/thpg/{{ $key }}">
-                                @elseif ($search === 'thps1plus2')
-                            <a href="videos/thps1plus2/{{ $key }}">
-                                @elseif ($search === 'thug pro')
-                            <a href="videos/thugpro/{{ $key }}">
-                                @else
-                                    <a href="">
-                                @endif
+                        <div class="relative">
+                            <a href="{{ $result['localUrl'] }}">
                                 <img 
                                     class="flex-initial img-modal-search w-32 h-auto pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100"
                                     src="{{ $result['Thumbnail'] }}"

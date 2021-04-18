@@ -23,7 +23,7 @@ Route::get('test', function (){
     return view('test');
 });
 
-/* Route::get('/videos/keyword/{key}', [PlayVideosController::class, 'keywordSearch']); */
+Route::get('/videos/keyword/{key}', [PlayVideosController::class, 'keywordSearch']);
 Route::get('/videos/thps2/{key}', [PlayVideosController::class, 'thps2']);
 Route::get('/videos/thps3/{key}', [PlayVideosController::class, 'thps3']);
 Route::get('/videos/thps4/{key}', [PlayVideosController::class, 'thps4']);

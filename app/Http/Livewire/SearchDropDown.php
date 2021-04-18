@@ -19,7 +19,15 @@ class SearchDropDown extends Component
 
         $gameResponse = Http::get('http://thvid-api.herokuapp.com/videos/game/'.$this->search.'/1/21')->json();
         
+        foreach($gameResponse as $key => $game) {
+            $gameResponse[$key]['localUrl'] = 'videos/'.$this->search.'/'.$key;
+        }
+
         $keywordResponse = Http::get('http://thvid-api.herokuapp.com/videos/keyword/'.$this->search.'/1/21')->json();
+        
+        foreach($keywordResponse as $key => $keyword) {
+            $keywordResponse[$key]['localUrl'] = 'videos/keyword/'.$this->search.'/'.$key;
+        }
         
         $this->searchResults = array_merge($gameResponse, $keywordResponse);
     }
