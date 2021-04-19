@@ -59,7 +59,6 @@
         player.ready(function() {
             setTimeout(function() {
                 player.autoplay('muted');
-                player.volume(0.5);
                 player.fluid('true')
             }, 2000);
         });

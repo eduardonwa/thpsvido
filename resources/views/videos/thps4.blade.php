@@ -8,9 +8,6 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <title>{{$thps4Video['Title']}}</title>
     <style>
-    .video-js .vjs-big-play-button {
-        display: none;
-    }
     .vjs-waiting .vjs-loading-spinner {
         display: none;
     }
@@ -18,29 +15,13 @@
 </head>
 <body class="bg-black">
 
-    <div class="h-full w-screen pt-20">
+    <div class="h-full w-screen">
         <video
             id="vid1"
-            class="video-js"
-        >
-      </video>
-
-        <div
-            x-data="{close: true}"
-            x-show="close"
-            class="text-center"
-        >
-            <p class="text-sm text-gray-500">
-              Mute is enabled by default, sorry for that
-            </p>
-            <p 
-                x-on:click="close = false"
-                class="text-green-500 text-sm cursor-pointer"
-            >
-                close
-            </p>
-        </div> {{-- inconveniences message --}}
-
+            class="video-js h-full w-screen"
+            controls
+            preload="auto"
+        ></video>
     </div>
     
     <!-- videojs -->
@@ -48,34 +29,28 @@
     <script src="{{ asset ('/js/Youtube.min.js') }}"></script>
     
     <script>
-        var player = videojs('vid1', { 
-            "techOrder": ["youtube"], 
-            "sources": [
-             { 
-                "type": "video/youtube", 
-                "src": "http://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"
-             }
-            ],
-            "controls": true,
-            "fluid": true,
+
+        var player = videojs('vid1', {
+            techOrder: ['youtube', 'html5']
         });
-        player.ready(function() {
-            setTimeout(function() {
-                player.autoplay('muted');
-                
-                if(player.muted()) {
-                    player.muted('false');
-                }
-                console.log(videojs('vid1').muted());
-            }, 2000);
+
+        player.src('/video/vido-intro.mp4');
+
+        player.on('ended', function() {
+        
+            player.src({ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"});
+            
+            player.play();
+            
+            player.on('ended', function () {
+                setTimeout(function() {
+                window.location.href = "http://www.thpsvido.com";
+                }, 2000);
+            });
+        
         });
+
     </script>
 
 </body>
 </html>
-
-{{--     myPlayer = this;
-    const myButton = document.querySelector('.mute-control');
-      myButton.addEventListener('click', function() {
-        myPlayer.muted(false);
-      }); --}}
