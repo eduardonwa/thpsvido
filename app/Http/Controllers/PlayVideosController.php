@@ -6,17 +6,15 @@ use Illuminate\Support\Facades\Http;
 
 class PlayVideosController extends Controller
 {
-    public function keywordSearch($keyword)
-    {        
-        $keywordVideos = Http::get('http://thvid-api.herokuapp.com/videos/keyword/'. $keyword )->json();
-
-        $keywordVideo = $keywordVideos[0];
-
+    public function keyword($id)
+    {
+        $keywordVideo = Http::get('http://thvid-api.herokuapp.com/videos/'. $id)->json();
+                
         return view ('videos.keyword', compact('keywordVideo'));
     }
 
     public function thps2($id)
-    {   
+    {
         $id++;
         
         $thps2Videos = Http::get('http://thvid-api.herokuapp.com/videos/game/THPS2/'. $id .'/1')->json();
@@ -27,7 +25,7 @@ class PlayVideosController extends Controller
     }
 
     public function thps3($id)
-    {   
+    {
         $id++;
         
         $thps3Videos = Http::get('http://thvid-api.herokuapp.com/videos/game/THPS3/'. $id .'/1')->json();
