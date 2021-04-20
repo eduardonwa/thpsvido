@@ -44,8 +44,8 @@
             
             player.on('ended', function () {
                 setTimeout(function() {
-                window.location.href = "http://www.thpsvido.com";
-                }, 2000);
+                window.location.href = "/";
+                }, 1000);
             });
         
         });

@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 class PlayVideosController extends Controller
 {
     public function keywordSearch($keyword)
-    {   
-        $keyword++;
-        
+    {        
         $keywordVideos = Http::get('http://thvid-api.herokuapp.com/videos/keyword/'. $keyword )->json();
-        
+
         $keywordVideo = $keywordVideos[0];
 
         return view ('videos.keyword', compact('keywordVideo'));
