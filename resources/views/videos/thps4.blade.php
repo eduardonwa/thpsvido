@@ -6,7 +6,7 @@
     <link href="//vjs.zencdn.net/7.10.2/video-js.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>{{$thps4Video['Title']}}</title>
+    <title>{{$gameVideo['Title']}}</title>
     <style>
     .vjs-waiting .vjs-loading-spinner {
         display: none;
@@ -38,7 +38,7 @@
 
         player.on('ended', function() {
         
-            player.src({ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{ $thps4Video['ID'] }}"});
+            player.src({ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{ $gameVideo['ID'] }}"});
             
             player.play();
             

@@ -1,6 +1,6 @@
 <x-master>
 
-        <x-main-slider/>
+        <x-home-banner/>
 
         <div class="px-4">
             @include('_categories')

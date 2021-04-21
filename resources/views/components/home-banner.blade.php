@@ -33,11 +33,17 @@
       }
     ], 
     "aspectRatio": '13:5',
-    "poster": '/img/thpsvido-logo.svg'
+    "poster": '/img/thpsvido-logo.svg',
+    "controls": true
   })
 
   player.ready(function() {
     player.autoplay('muted');
+  });
+
+  player.on('ended', function() {
+    player.poster('/img/thpsvido-logo.svg');
+    /* .video-js.vjs-ended .vjs-poster { display: block; } */
   });
 
   const muteButton = document.querySelector('.mute-control');

@@ -8,8 +8,33 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <title>{{$keywordVideo['Title']}}</title>
     <style>
+    .video-js {
+        font-size: 18px;
+    }
     .vjs-waiting .vjs-loading-spinner {
         display: none;
+    }
+    .video-js .vjs-volume-level,
+    .video-js .vjs-play-progress,
+    .video-js .vjs-slider-bar {
+        background-color: #10b981;
+    }
+    .video-js .vjs-slider {
+        position: relative;
+        bottom: 55px;
+        width: 100%;
+    }
+    .video-js .vjs-control-bar,
+    .video-js .vjs-menu-button {
+        height: 89px;
+        padding-top: 13px;
+        background-color: transparent;
+    }
+    .vjs-volume-control .vjs-control,
+    .vjs-volume-horizontal,
+    .vjs-volume-level::before {
+        position: relative;
+        top: 8px;
     }
     </style>
 </head>

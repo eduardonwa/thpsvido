@@ -24,16 +24,7 @@ Route::get('test', function (){
 });
 
 Route::get('/videos/keyword/{keyword}', [PlayVideosController::class, 'keyword']);
-Route::get('/videos/thps2/{key}', [PlayVideosController::class, 'thps2']);
-Route::get('/videos/thps3/{key}', [PlayVideosController::class, 'thps3']);
-Route::get('/videos/thps4/{key}', [PlayVideosController::class, 'thps4']);
-Route::get('/videos/thug/{key}', [PlayVideosController::class, 'thug']);
-Route::get('/videos/thug2/{key}', [PlayVideosController::class, 'thug2']);
-Route::get('/videos/thaw/{key}', [PlayVideosController::class, 'thaw']);
-Route::get('/videos/thp8/{key}', [PlayVideosController::class, 'thp8']);
-Route::get('/videos/thpg/{key}', [PlayVideosController::class, 'thpg']);
-Route::get('/videos/thps1plus2/{key}', [PlayVideosController::class, 'thps1Plus2']);
-Route::get('/videos/thugpro/{key}', [PlayVideosController::class, 'thugpro']);
+Route::get('/videos/{slug}/{id}', [PlayVideosController::class, 'gameWatch']);
 
 Route::middleware(['auth'])->group(function () {
     
