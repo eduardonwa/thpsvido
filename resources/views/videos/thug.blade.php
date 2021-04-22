@@ -37,6 +37,10 @@
         bottom: 70px;
         width: 100%;
     }
+    .vjs-control-bar .vjs-fullscreen-control {
+        position: absolute;
+        right: 0px;
+    }
     </style>
 </head>
 <body class="bg-black">
