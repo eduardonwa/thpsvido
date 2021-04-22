@@ -33,8 +33,7 @@
       }
     ], 
     "aspectRatio": '13:5',
-    "poster": '/img/thpsvido-logo.svg',
-    "controls": true
+    "poster": '/img/thpsvido-logo.svg'
   })
 
   player.ready(function() {

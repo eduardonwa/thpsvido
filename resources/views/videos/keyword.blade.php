@@ -14,27 +14,28 @@
     .vjs-waiting .vjs-loading-spinner {
         display: none;
     }
-    .video-js .vjs-volume-level,
-    .video-js .vjs-play-progress,
     .video-js .vjs-slider-bar {
         background-color: #10b981;
     }
     .video-js .vjs-slider {
         position: relative;
-        bottom: 55px;
-        width: 100%;
+        top: 5px;
     }
-    .video-js .vjs-control-bar,
-    .video-js .vjs-menu-button {
+    .video-js .vjs-control-bar {
         height: 89px;
-        padding-top: 13px;
         background-color: transparent;
     }
-    .vjs-volume-control .vjs-control,
     .vjs-volume-horizontal,
     .vjs-volume-level::before {
         position: relative;
-        top: 8px;
+    }
+    .vjs-volume-horizontal > .vjs-slider-bar {
+        background-color: #708199;
+    }
+    .video-js .vjs-progress-control {
+        position: absolute;
+        bottom: 70px;
+        width: 100%;
     }
     </style>
 </head>
