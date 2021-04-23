@@ -1,7 +1,9 @@
+@props(['type' => '/'])
+
 <a
     class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4
         bg-black font-bold border-gray-700 hover:bg-indigo-500 hover:shadow-xl transition ease-in-out"
-    href="/videos/thug/15"
+    {{ $attributes->merge(['href' => '/'.$type]) }}
 >
     <svg
         class="w-6 h-6"

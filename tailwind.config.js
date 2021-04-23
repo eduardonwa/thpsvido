@@ -17,6 +17,7 @@ module.exports = {
             },
             height: {
                 hero: '370px',
+                banner: '300px'
             },
             screens: {
                 iPsix: '667px',

@@ -9,7 +9,7 @@
   >
     <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Phunky Phresh</h1>
 
-    <x-play-now-button/>
+    <x-play-now-button type="videos/keyword/605a43ea667cd39060f43512"/>
  
     <x-mute-button/>
 
