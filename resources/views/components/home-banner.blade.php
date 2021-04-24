@@ -7,9 +7,9 @@
           flex flex-col justify-center items-start space-y-1 md:space-y-8
           bg-gradient-to-r from-black h-full w-1/2 absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Phunky Phresh</h1>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">NachoMania Vol.7</h1>
 
-    <x-play-now-button type="videos/keyword/605a43ea667cd39060f43512"/>
+    <x-play-now-button type="videos/keyword/605a43ea667cd39060f435a9"/>
  
     <x-mute-button/>
 
@@ -29,7 +29,7 @@
     "sources": [
       { 
         "type": "video/youtube", 
-        "src": "https://www.youtube.com/watch?v=0n23qfZawlw"
+        "src": "https://www.youtube.com/watch?v=8kPoODyrrOc&t=6s"
       }
     ], 
     "aspectRatio": '13:5',
