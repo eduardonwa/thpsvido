@@ -29,6 +29,6 @@ class ThpsPodcast extends Component
     public function render()
     {
         return view('livewire.thps-podcast')
-            ->layout('videos.channels.thps-podcast');
+            ->layout('channels.thps-podcast');
     }
 }
