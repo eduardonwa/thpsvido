@@ -10,7 +10,7 @@
         alt="thpsvido-small">
 </a> {{-- THPS Vido logo small --}}
 
-<div class="rounded-md">
+<div class="rounded-md relative left-10">
     <a href="#search">
         <svg
             class="ml-1 text-green-500 cursor-pointer hover:fill-current hover:text-gray-300 transition ease-in-out"
