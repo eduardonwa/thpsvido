@@ -35,7 +35,8 @@
     .video-js .vjs-progress-control {
         position: absolute;
         bottom: 70px;
-        width: 100%;
+        width: 98%;
+        padding-left: 8px;
     }
     .vjs-control-bar .vjs-fullscreen-control {
         position: absolute;

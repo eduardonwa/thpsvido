@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Livewire\ThpsPodcast;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PlayVideosController;
-use App\Http\Controllers\THPSPodcastController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,23 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function (){
-    return view('test');
-});
-
-Route::get('/channel/thpspodcast', [THPSPodcastController::class, 'index']);
+Route::get('/channel/thpspodcast', ThpsPodcast::class);
 
 Route::get('/videos/keyword/{keyword}', [PlayVideosController::class, 'keyword']);
 
 Route::get('/videos/{slug}/{id}', [PlayVideosController::class, 'gameWatch']);
-
-
-Route::middleware(['auth'])->group(function () {
-    
-    Route::get('dashboard', [
-        DashboardController::class, 'index'
-    ])->name('dashboard');
-
-});
 
 require __DIR__.'/auth.php';

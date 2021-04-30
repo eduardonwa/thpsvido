@@ -2,14 +2,14 @@
   class="mb-12 rounded-md relative bg-gray-900 h-full shadow-xl"
 >    
 
-  <div
-    class="overflow-hidden text-sm px-8 lg:w-96
+  <div 
+    class="overflow-hidden text-sm px-8 w-full
           flex flex-col justify-center items-start space-y-1 md:space-y-8
-          bg-gradient-to-r from-black h-full w-1/2 absolute z-10" 
+          bg-gradient-to-r from-black via-transparent to-transparent h-full absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">NachoMania Vol.7</h1>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">COVID20</h1>
 
-    <x-play-now-button type="videos/keyword/605a43ea667cd39060f435a9"/>
+    <x-play-now-button type="videos/keyword/605a43ea667cd39060f43506"/>
  
     <x-mute-button/>
 
@@ -17,7 +17,7 @@
 
   <video
     id="vid1"
-    class="video-js"
+    class="video-js mt-10"
   >
   </video>
 
@@ -29,7 +29,7 @@
     "sources": [
       { 
         "type": "video/youtube", 
-        "src": "https://www.youtube.com/watch?v=8kPoODyrrOc&t=6s"
+        "src": "https://www.youtube.com/watch?v=wqK3ZnMQoM4"
       }
     ], 
     "aspectRatio": '13:5',

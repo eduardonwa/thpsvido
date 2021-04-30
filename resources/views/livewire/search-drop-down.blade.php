@@ -1,6 +1,6 @@
 <div>
     <input
-        wire:model.debounce.300ms="search"
+        wire:model="search"
         id="search"
         type="search"
         autocomplete="off"
@@ -46,7 +46,7 @@
                                     </g>
                                 </svg>
                             </a>
-                        </div> 
+                        </div>
                         <div class="flex flex-col">
                             <p class="flex-1 text-xs md:text-sm h-auto font-bold md:font-extrabold">
                                 {{ Illuminate\Support\Str::limit($result['Title'], 40) }} {{-- make it show a fixed number of characters --}}

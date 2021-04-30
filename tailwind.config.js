@@ -22,8 +22,11 @@ module.exports = {
             screens: {
                 iPsix: '667px',
                 iPxs: '812px',
-                iPad: '768px'
-            }
+                iPad: '768px',
+            },
+            variants: {
+                fill: ['hover', 'focus'],
+            },
         },
     },
 

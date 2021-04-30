@@ -75,10 +75,44 @@
             .vjs-waiting .vjs-loading-spinner {
                 display: none;
             }
+            /* Navbar */
+            #navbar {
+                background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0)); 
+            }
         </style>
         @livewireStyles
     </head>
     <body class="bg-gray-900">
+        <div
+            id="navbar"
+            class="text-white sm:bg-transparent p-1 flex align-center justify-between px-20 py-4 fixed w-full z-20">
+           
+            <a href="/">
+                <img 
+                    class="opacity-0 md:opacity-100 h-8 hover:fill-current hover:text-gray-100 transition ease-in-out" 
+                    src="/img/thpsvido-logo-sm.svg" 
+                    alt="thpsvido-small">
+            </a> {{-- THPS Vido logo small --}}
+
+            <div class="rounded-md">
+                <a href="#search">
+                    <svg
+                        class="ml-1 text-green-500 cursor-pointer hover:fill-current hover:text-gray-300 transition ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg" 
+                        height="28" 
+                        viewBox="0 0 24 24" 
+                        width="28"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                            >
+                        </path>
+                    </svg> 
+                </a>
+            </div> {{-- link to search modal --}}
+
+        </div> {{-- top bar --}}
 
         <div class="flex text-white min-h-screen">
             
@@ -91,7 +125,7 @@
 
                 <button
                     x-on:click="show = ! show"
-                    class="hover:bg-green-500 p-2 text-white rounded-full absolute top-0 mt-4 md:mt-12 transition ease-in-out hover:text-white"
+                    class="hover:bg-gray-500 p-2 text-white rounded-full absolute top-0 mt-3 transition ease-in-out hover:text-white"
                 >
                     <svg
                         fill="currentColor"
@@ -120,5 +154,17 @@
         <!-- flickity -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         @livewireScripts
+        <script>
+
+            var win = window,
+                docEl = document.documentElement,
+                $navbar = document.querySelector('#navbar');
+
+            win.onscroll = function(){
+                var sTop = (this.pageYOffset || docEl.scrollTop)  - (docEl.clientTop || 0);
+                $navbar.style.backgroundImage =  sTop > 100 ? "linear-gradient(to bottom, rgba(0,0,0,1), rgba(255,0,0,0))":"";
+            };
+
+        </script>
     </body>
 </html>

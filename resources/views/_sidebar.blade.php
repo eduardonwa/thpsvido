@@ -77,12 +77,5 @@
                 <span class="pl-2">Settings</span>
             </a>
         </li>
-        <a href="/" class="flex items-center justify-center relative">
-            <img
-                class="absolute mt-28 w-full"
-                src="{{ asset('img/thpsvido-logo.svg') }}" 
-                alt="thpsvido-logo"
-            >
-        </a>
     </div>
 </ul>

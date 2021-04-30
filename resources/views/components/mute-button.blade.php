@@ -2,7 +2,7 @@
     class="mute-control bg-gray-500 hover:bg-gray-900 rounded-full 
             hidden sm:block relative cursor-pointer transition ease-in-out"
     x-data="{ active: false }"
-    x-on:click="active = ! active " :class="{ 'bg-green-500' : active }"
+    x-on:click="active = ! active " :class="{ 'bg-indigo-500' : active }"
 >
 <svg
   class="w-7 h-7 p-1" 

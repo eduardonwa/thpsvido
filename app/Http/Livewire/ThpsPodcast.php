@@ -6,23 +6,29 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Http;
 
 class ThpsPodcast extends Component
-{
-    public $season;
-
-    protected $listeners = ['selectSeason' => 'showEpisodes'];
-
-    public function showEpisodes()
+{   
+    public $episodes = [];
+    public $page = 5;
+    
+    public function mount()
     {
-        $this->season = Http::get('http://thvid-api.herokuapp.com/videos/game/podcast/5/10')->json();
+        $this->currentSeason();
     }
 
-/*     public function seasonList()
+    public function currentSeason()
     {
-        $podcastVideos = Http::get('http://thvid-api.herokuapp.com/videos/game/podcast/'. $this->season .'/10')->json();
-    } */
+        $podcastSeason = Http::get('http://thvid-api.herokuapp.com/videos/game/podcast/'. $this->page .'/10')->json();
+        $this->episodes = collect($podcastSeason);
+    }
+
+    public function updatedPage()
+    {
+          $this->currentSeason();
+    }
     
     public function render()
     {
-        return view('livewire.thps-podcast');
+        return view('livewire.thps-podcast')
+            ->layout('videos.channels.thps-podcast');
     }
 }
