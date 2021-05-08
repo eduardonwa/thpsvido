@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>THPS Vido</title>
+        <link rel="icon" type="image/svg+xml" href="/img/32-vido-icon.svg" sizes="32x32"/>
+        <link rel="icon" type="image/svg+xml" href="/img/152-vido-icon.svg" sizes="152x152"/>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">

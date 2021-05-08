@@ -7,9 +7,9 @@
           flex flex-col justify-center items-start space-y-1 md:space-y-8
           bg-gradient-to-r from-black via-transparent to-transparent h-full absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">COVID20</h1>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">Hot Takes</h1>
 
-    <x-play-now-button type="videos/keyword/605a43ea667cd39060f43506"/>
+    <x-play-now-button type="videos/keyword/605a43ea667cd39060f43ca8"/>
  
     <x-mute-button/>
 
@@ -29,7 +29,7 @@
     "sources": [
       { 
         "type": "video/youtube", 
-        "src": "https://www.youtube.com/watch?v=wqK3ZnMQoM4"
+        "src": "https://www.youtube.com/watch?v=04YdGqvvPbw&t"
       }
     ], 
     "aspectRatio": '13:5',

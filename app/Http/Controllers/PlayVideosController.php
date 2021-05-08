@@ -17,7 +17,7 @@ class PlayVideosController extends Controller
 
         $gameVideo = $videos[0];
 
-        return view ('videos.' . $slug, compact('gameVideo'));
+        return view ('videos.watch', compact('gameVideo'));
     }
 
     public function keyword($id)
