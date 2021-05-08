@@ -15,7 +15,6 @@ class OldSchoolController extends Controller
 
     public function show()
     {
-
         return view('videos.old-school');
     }
 }
