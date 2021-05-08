@@ -9,6 +9,7 @@ class OldSchoolController extends Controller
 {
     public function index()
     {
+        
         $oldSchool = OldSchool::get();
         return view('channels.old-school', compact('oldSchool'));
     }
