@@ -4,11 +4,11 @@
         wire:model="page"
         class="bg-black rounded-md border border-gray-500 lg:w-1/4"
     >
-        <option value="5">Season 1</option>
-        <option value="4">Season 2</option>
+        <option value="1">Season 1</option>
+        <option value="2">Season 2</option>
         <option value="3">Season 3</option>
-        <option value="2">Season 4</option>
-        <option value="1">Season 5</option>
+        <option value="4">Season 4</option>
+        <option value="5">Season 5</option>
     </select>
 </div>
 <div>

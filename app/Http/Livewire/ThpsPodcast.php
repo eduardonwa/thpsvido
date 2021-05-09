@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class ThpsPodcast extends Component
 {   
     public $episodes = [];
-    public $page = 5;
+    public $page = 1;
     
     public function mount()
     {
