@@ -33,7 +33,7 @@ class RolesController extends Controller
         $roleObject = new Role($role);
         $roleObject->save($role);
 
-        return redirect('/admin/users');
+        return redirect('/admin/roles');
     }
 
     /**
@@ -67,6 +67,9 @@ class RolesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $role = Role::find($id);
+        $role->delete();
+
+        return redirect()->route('roles');
     }
 }

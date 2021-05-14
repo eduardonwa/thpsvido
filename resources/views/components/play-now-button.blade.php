@@ -1,7 +1,7 @@
 @props(['type' => '/'])
 
 <a
-    class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4
+    class="border rounded-md p-2 md:w-32 flex items-center justify-center mb-4 md:mb-0
         bg-black font-bold border-gray-700 hover:bg-indigo-500 hover:shadow-xl transition ease-in-out"
     {{ $attributes->merge(['href' => '/'.$type]) }}
 >

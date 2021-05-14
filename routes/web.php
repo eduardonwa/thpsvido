@@ -2,9 +2,14 @@
 
 use App\Http\Livewire\ThpsPodcast;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlayVideosController;
-use App\Http\Controllers\OldSchoolController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\AbilitiesController;
+use App\Http\Controllers\OldSchoolController;
+use App\Http\Controllers\PlayVideosController;
+use App\Http\Controllers\AbilitiesRoleController;
+use App\Http\Controllers\AssignRolesController;
+use App\Http\Controllers\BannerController;
+use App\Models\Banner;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +23,8 @@ use App\Http\Controllers\RolesController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $banner = Banner::latest()->limit(1)->get();
+    return view('welcome', compact('banner'));
 });
 
 Route::get('/channel/thpspodcast', ThpsPodcast::class);
@@ -42,7 +48,30 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
         return view('admin.users.index');
     })->name('users');
 
-    Route::resource('roles', RolesController::class);
+    Route::get('/roles', function() {
+        return view('admin.roles.index');
+    })->name('roles');
+
+    Route::get('/abilities', function() {
+        return view('admin.abilities.index');
+    })->name('abilities');
+
+    Route::resource('roles', RolesController::class)->except('index');
+
+    Route::resource('abilities', AbilitiesController::class)->except('index');
+
+    Route::post('role/{role}/assignAbility', [AbilitiesRoleController::class, 'assignAbility']);
+
+    Route::post('user/{user}/assignRole', [AssignRolesController::class, 'assignRole'])->name('assignRole');
+
+    Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
+
+    Route::post('/publish-banner', [BannerController::class, 'store']);
+
+    Route::get('/', function () {
+        $banner = Banner::latest()->limit(1)->get();
+        return view('components.modal-banner', compact('banner'));
+    });
 });
 
 

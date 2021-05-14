@@ -15,16 +15,16 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    
-                    @can('upload_videos')
-                        <x-nav-link :href="route('uploads')" :active="request()->routeIs('uploads')">
-                            {{ __('Uploads') }}
-                        </x-nav-link>
-                    @endcan
 
                     @can('view_users')
                         <x-nav-link :href="route('users')" :active="request()->routeIs('users')">
                             {{ __('Users') }}
+                        </x-nav-link>
+                    @endcan
+
+                    @can('upload_videos')
+                        <x-nav-link :href="route('uploads')" :active="request()->routeIs('uploads')">
+                            {{ __('Uploads') }}
                         </x-nav-link>
                     @endcan
                 </div>
@@ -78,7 +78,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            
+
             @can('view_users')
                 <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">
                     {{ __('Users') }}

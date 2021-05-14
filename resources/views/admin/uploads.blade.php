@@ -2,9 +2,10 @@
     <x-slot name="header">
 
         <div class="flex space-x-2">
-            <a href="#upload" class="text-gray-100 hover:text-yellow-500 font-bold">
-                New video
-            </a>
+            @can('upload_videos')
+                <a href="#upload" class="text-white">Upload Video</a>
+                <a href="#banner" class="text-white">Home Banner</a>
+            @endcan
         </div>
         
     </x-slot>
@@ -23,7 +24,10 @@
 
     </div>
     
-    <x-upload-modal name="upload">   
-    </x-upload-modal>
+    <x-modal-upload name="upload">   
+    </x-modal-upload>
+
+    <x-modal-banner name="banner">   
+    </x-modal-banner>
     
 </x-app-layout>

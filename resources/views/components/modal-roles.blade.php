@@ -38,8 +38,9 @@
                         </a> <!-- close button -->
                     </div> {{-- topbar --}}
                         
-                    <x-roles-tab :roles="$roles">
-                    </x-roles-tab>
+                    <x-tabs-roles :roles="$roles">
+                    </x-tabs-roles>
+
                 </div>
             </div>
 

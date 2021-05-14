@@ -17,4 +17,14 @@ class OldSchoolController extends Controller
     {
         return view('videos.old-school');
     }
+
+    public function store(Request $request)
+    {
+        $role = request()->validate([
+            'game' => ['required'],
+            'title' => ['required'],
+            'thumbnail' => ['required'],
+            'video_id' => ['required']
+        ]);
+    }
 }

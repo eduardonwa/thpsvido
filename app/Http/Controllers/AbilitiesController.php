@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Models\Ability;
 
-class VideosController extends Controller
+class AbilitiesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Ability $abilities)
     {   
-        //
+        $abilities = Ability::with('name');
+
+        return view('admin.abilities.index', [
+            'abilities' => $abilities
+        ]);
     }
 
     /**
@@ -24,7 +28,7 @@ class VideosController extends Controller
      */
     public function create()
     {
-        //
+        return view('abilities.index');
     }
 
     /**
@@ -35,7 +39,14 @@ class VideosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ability = request()->validate([
+            'name' => ['required']
+        ]);
+
+        $abilityObject = new Ability($ability);
+        $abilityObject->save($ability);
+
+        return redirect()->route('abilities');
     }
 
     /**
@@ -80,6 +91,9 @@ class VideosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ability = Ability::find($id);
+        $ability->delete();
+
+        return redirect()->route('abilities');
     }
 }

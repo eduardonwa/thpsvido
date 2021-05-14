@@ -1,7 +1,7 @@
 <form 
     action="roles" 
     method="POST"
-    class="p-8 flex items-center justify-center space-y-4 flex-col w-2/4 mx-auto"
+    class="mt-4 flex items-center justify-center space-y-4 flex-col w-2/4 mx-auto"
 >
     @csrf
 

@@ -9,7 +9,12 @@ class Ability extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'label'
+    ];
+
+    protected $table = 'abilities';
 
     public function roles()
     {
