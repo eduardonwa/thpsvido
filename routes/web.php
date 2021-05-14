@@ -23,8 +23,8 @@ use App\Models\Banner;
 */
 
 Route::get('/', function () {
-    $banner = Banner::latest()->limit(1)->get();
-    return view('welcome', compact('banner'));
+    /* $banner = Banner::latest()->limit(1)->get(); */
+    return view('welcome'/* , compact('banner') */);
 });
 
 Route::get('/channel/thpspodcast', ThpsPodcast::class);
@@ -55,6 +55,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
     Route::get('/abilities', function() {
         return view('admin.abilities.index');
     })->name('abilities');
+/* 
+    Route::post('/publish-banner', [BannerController::class, 'store']); */
 
     Route::resource('roles', RolesController::class)->except('index');
 
@@ -66,12 +68,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
 
     Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
 
-    Route::post('/publish-banner', [BannerController::class, 'store']);
 
-    Route::get('/', function () {
+
+/*     Route::get('/', function () {
         $banner = Banner::latest()->limit(1)->get();
         return view('components.modal-banner', compact('banner'));
-    });
+    }); */
 });
 
 
