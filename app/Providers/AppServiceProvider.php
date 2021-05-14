@@ -47,8 +47,12 @@ class AppServiceProvider extends ServiceProvider
             $view->with('abilities', Ability::get());
         });
 
-/*         View::composer(['components.modal-banner'], function ($view) {
+        View::composer(['components.modal-banner'], function ($view) {
             $view->with('banner', Banner::get());
-        }); */
+        });
+
+        View::composer(['components.home-banner'], function ($view) {
+            $view->with('banner', Banner::latest()->limit(1)->get());
+        });
     }
 }
