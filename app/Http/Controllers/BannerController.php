@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
-    public function create()
-    {
-        return view('components.tabs-banner');
-    }
-
     public function store(Request $request)
     {   
         $banner = request()->validate([
