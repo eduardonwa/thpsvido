@@ -2,15 +2,16 @@
   class="mb-12 rounded-md relative bg-gray-900 h-full shadow-xl"
 >    
 
+@foreach ($banner as $banner)
   <div 
     class="overflow-hidden text-sm px-8 w-full
           flex flex-col justify-center items-start space-y-1 md:space-y-8
           bg-gradient-to-r from-black via-transparent to-transparent h-full absolute z-10" 
   >
-    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">eSt Team - BeSt of eSt: Volume 1</h1>
-    <p class="text-green-500 text-base font-semibold">eSt Team</p>
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider">{{ $banner->video_title }}</h1>
+    <p class="text-green-500 text-base font-semibold">{{ $banner->proskaters }}</p>
 
-    <x-play-now-button type="videos/keyword/605a43ea667cd39060f4357b"/>
+    <x-play-now-button type="{{ $banner->play_now_uri }}"/>
  
     <x-mute-button/>
 
@@ -30,7 +31,7 @@
     "sources": [
       { 
         "type": "video/youtube", 
-        "src": "https://www.youtube.com/watch?v=A8LQubh3SYA"
+        "src": "{{ $banner->youtube_url }}"
       }
    
     ], 
@@ -60,3 +61,4 @@
       }
   });
 </script>
+@endforeach
