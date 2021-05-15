@@ -66,11 +66,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
     Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
 
     Route::post('/publish-banner', [BannerController::class, 'store']);
-
-    Route::get('/', function () {
-        $banner = Banner::latest()->limit(1)->get();
-        return view('components.modal-banner', compact('banner'));
-    });
 });
 
 

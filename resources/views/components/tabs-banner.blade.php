@@ -22,6 +22,7 @@
                     </div>
                 </li>
             </ul>
+        @endforeach
     </div> {{-- history --}}
 
     <div 
@@ -29,12 +30,14 @@
         class="flex flex-col align-center justify-center text-white space-y-4 m-4"
     >
         <img src="" alt="thumbnail vid" class="mx-auto border rounded-sm w-32 h-auto pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100">
-        <p class="text-center text-white font-bold">{{$banner->video_title}}</p>
-            <div class="mx-auto">
-                <x-play-now-button type="{{ $banner->play_now_uri }}"/>
-            </div>
+            {{-- @foreach ($banner as $banner) --}}
+                <p class="text-center text-white font-bold">{{ $banner->video_title }}</p>
+                    <div class="mx-auto">
+                        <x-play-now-button type="{{ $banner->play_now_uri }}"/>
+                    </div>
+            {{-- @endforeach --}}
     </div> {{-- current --}}
-            @endforeach
+            
 
     <div 
         x-show="tab === 'publish'"
