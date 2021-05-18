@@ -1,8 +1,8 @@
 <div
   class="mb-12 rounded-md relative bg-gray-900 h-full shadow-xl"
 >    
+  @if ($banner)
 
-@foreach ($banner as $banner)
   <div 
     class="overflow-hidden text-sm px-8 w-full
           flex flex-col justify-center items-start space-y-1 md:space-y-8
@@ -61,4 +61,24 @@
       }
   });
 </script>
-@endforeach
+@else
+<div
+  class="mb-12 rounded-md relative bg-gray-900 h-full shadow-xl"
+>    
+  <div 
+    class="overflow-hidden text-sm px-8 w-full h-full absolute z-10" 
+  >
+    <h1 class="font-bold text-md sm:text-lg lg:text-2xl tracking-wider"> </h1>
+    <p class="text-green-500 text-base font-semibold"> </p>
+
+  </div> {{-- Description overlay --}}
+
+  <video
+    class="mt-10 w-full"
+    autoplay
+  >
+    <source src="/video/vido-intro.mp4" type="video/mp4">
+  </video>
+
+</div>
+@endif
