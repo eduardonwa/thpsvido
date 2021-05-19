@@ -43,7 +43,7 @@ class OldSchoolController extends Controller
             Storage::disk('s3')->put($fileNameToStore, fopen($request->file('thumbnail'), 'r+'), 'public');
         };
         
-        $oldSchoolObject = new OldSchool($oldSchool, $fileNameToStore);
+        $oldSchoolObject = new OldSchool($oldSchool/* , $fileNameToStore */);
         $oldSchoolObject->save($oldSchool);
 
         return redirect('admin/uploads');
