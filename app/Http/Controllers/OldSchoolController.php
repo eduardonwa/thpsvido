@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OldSchool;
+use Illuminate\Support\Facades\Storage;
 
 class OldSchoolController extends Controller
 {
@@ -13,18 +14,46 @@ class OldSchoolController extends Controller
         return view('channels.old-school', compact('oldSchool'));
     }
 
-    public function show()
+    public function show($id)
+    {   
+        $oldSchool = OldSchool::find($id);
+        return view('videos.old-school', compact('oldSchool'));
+    }
+
+    public function create()
     {
-        return view('videos.old-school');
+        return view('admin.uploads.oldschool.create');
     }
 
     public function store(Request $request)
     {
-        $role = request()->validate([
+        $oldSchool = request()->validate([
             'game' => ['required'],
             'title' => ['required'],
             'thumbnail' => ['required'],
-            'video_id' => ['required']
+            'category' => ['required'],
+            'video_id' => ['nullable']
         ]);
+
+        if($request->hasFile('thumbnail')) {
+            $fileNameWithExtension = $request->file('thumbnail')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
+            $extension = $request->file('thumbnail')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            Storage::disk('s3')->put($fileNameToStore, fopen($request->file('thumbnail'), 'r+'), 'public');
+        };
+        
+        $oldSchoolObject = new OldSchool($oldSchool, $fileNameToStore);
+        $oldSchoolObject->save($oldSchool);
+
+        return redirect('admin/uploads');
+    }
+
+    public function destroy($id)
+    {
+        $oldSchool = OldSchool::find($id);
+        $oldSchool->delete();
+
+        return redirect('admin/uploads');
     }
 }

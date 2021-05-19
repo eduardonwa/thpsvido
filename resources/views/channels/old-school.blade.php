@@ -22,8 +22,8 @@
                 </select>
             </div>
             @foreach ($oldSchool as $video)
-                <h1>{{$video->title}}</h1>
-                <img src="{{$video->thumbnail}}" alt="">
+                <h1>{{ $video->title }}</h1>
+                <img src="https://thpsvido.s3-us-west-2.amazonaws.com/{{ $video->thumbnail }}" alt="">
             @endforeach
         </div>
             

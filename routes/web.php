@@ -3,13 +3,14 @@
 use App\Http\Livewire\ThpsPodcast;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\AbilitiesController;
 use App\Http\Controllers\OldSchoolController;
+use App\Http\Controllers\ThpsNerdsController;
 use App\Http\Controllers\PlayVideosController;
-use App\Http\Controllers\AbilitiesRoleController;
 use App\Http\Controllers\AssignRolesController;
-use App\Http\Controllers\BannerController;
-use App\Models\Banner;
+use App\Http\Controllers\AbilitiesRoleController;
+use App\Models\ThpsNerds;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::get('/channel/thpspodcast', ThpsPodcast::class);
 
 Route::get('/channel/oldschool', [OldSchoolController::class, 'index']);
 
+Route::get('/channel/thps-nerds', [ThpsNerdsController::class, 'index']);
+
+Route::get('/videos/old-school/{id}', [OldSchoolController::class, 'show']);
+
 Route::get('/videos/keyword/{keyword}', [PlayVideosController::class, 'keyword']);
 
 Route::get('/videos/{slug}/{id}', [PlayVideosController::class, 'gameWatch']);
@@ -40,7 +45,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->prefix('admin')->group(function (){
     Route::get('uploads', function() {
-        return view('admin.uploads');
+        return view('admin.uploads.index');
     })->name('uploads');
 
     Route::get('users', function() {
@@ -64,8 +69,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
     Route::post('user/{user}/assignRole', [AssignRolesController::class, 'assignRole'])->name('assignRole');
 
     Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
+    
+    Route::post('/old-school', [OldSchoolController::class, 'store']);
 
+/*     Route::post('/thps-nerds', [ThpsNerdsController::class, 'store']);
+
+    Route::delete('/removeNerd/{id}', [ThpsNerdsController::class, 'destroy']); */
+
+    Route::delete('/removeOldSchool/{id}', [OldSchoolController::class, 'destroy']);
+    
     Route::post('/publish-banner', [BannerController::class, 'store']);
+
 });
 
 

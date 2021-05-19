@@ -43,5 +43,8 @@
                 </div>
             </div>
 
+            <x-tabs-channels>
+            </x-tabs-channels>
+
         </div>
 </div>

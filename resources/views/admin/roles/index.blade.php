@@ -58,6 +58,7 @@
                                         </span> {{-- tooltip  --}}
 
                                     </div> {{-- span wrapper --}}
+                                    
                                     <div class="flex align-items justify-between">
                                         <p class="w-2/4 lg:w-auto my-auto"></p>{{ $user->name }}
                                         <form 

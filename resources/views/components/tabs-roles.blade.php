@@ -18,11 +18,11 @@
         >
             <ol class="list-decimal mt-4 flex align-center justify-center flex-col p-4 space-y-5">
                 @foreach ($roles as $role)
-                    <li class="grid grid-cols-2 align-center justify-between">
+                    <li class="grid grid-cols-2 align-center justify-between border-b border-gray-500 pb-2">
                         <div 
                             x-data="{toolTip: false}"
                             x-on:click="toolTip = ! toolTip"
-                            class="font-semibold cursor-pointer"
+                            class="font-semibold cursor-pointer text-center"
                         >
                             <span 
                                 x-on:click="toolTip"
@@ -33,7 +33,7 @@
                             </span> {{-- toggle tooltip--}}
 
                             <span 
-                                class="border bg-black text-white text-sm absolute left-20 p-1 rounded-sm"
+                                class="border bg-black text-white text-sm absolute left-30 p-1 rounded-sm"
                                 x-show="toolTip"
                             >
                                 @forelse ($role->abilities as $name)
@@ -70,14 +70,15 @@
         <div x-show="tab === 'abilities'">
             <div class="mt-4 flex align-center justify-center flex-col p-4 text-white space-y-5">
                 @foreach ($roles as $role)
-                    <div class="grid grid-cols-2 align-center">
+                    <div class="lg:grid lg:grid-cols-2 lg:align-center
+                                border-b border-gray-500">
 
-                        <p class="pr-2 my-auto">{{ $role->name }}</p>
+                        <p class="my-auto text-center font-semibold">{{ $role->name }}</p>
                         
                         <form 
                             action="role/{{$role->id}}/assignAbility"
                             method="POST"
-                            class="flex align-center justify-center space-x-2"
+                            class="flex flex-col align-center justify-center space-y-2 space-x-2 pb-4"
                         >   @csrf
 
                             <select 
@@ -93,12 +94,15 @@
                                 @endforeach
                             </select>
 
-                            <button 
-                                type="submit"
-                                class="my-auto rounded-sm p-1 h-8 text-sm text-white font-semibold hover:bg-green-800 transition ease-in-out bg-green-600"
-                            >
-                                Assign
-                            </button>
+                            <div class="flex justify-center">
+                                <button 
+                                    type="submit"
+                                    class="my-auto rounded-sm p-1 h-8 text-sm text-white font-semibold
+                                        hover:bg-green-800 transition ease-in-out bg-green-600 w-44"
+                                >
+                                    Assign
+                                </button>
+                            </div>
                         </form>
                         
                     </div>

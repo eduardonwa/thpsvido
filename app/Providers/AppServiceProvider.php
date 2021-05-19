@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Banner;
 use App\Models\Ability;
+use App\Models\OldSchool;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -53,6 +54,10 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer(['components.home-banner'], function ($view) {
             $view->with('banner', Banner::first());
+        });
+
+        View::composer(['components.tabs-channels', 'admin.uploads.index'], function ($view) {
+            $view->with('oldSchool', OldSchool::get());
         });
     }
 }

@@ -3,7 +3,7 @@
 
         <div class="flex space-x-2">
             @can('upload_videos')
-                <a href="#upload" class="text-white">Upload Video</a>
+                <a href="#upload" class="text-white">Channels</a>
                 <a href="#banner" class="text-white">Home Banner</a>
             @endcan
         </div>
@@ -21,7 +21,7 @@
                 @endcan
             </div>
         </div>
-
+        @include('admin.uploads.oldschool.index')
     </div>
     
     <x-modal-upload name="upload">   
