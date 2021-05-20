@@ -7,7 +7,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <title>{{ $oldSchool->title }}</title>
+    <title>{{ $thpsNerds->title }}</title>
 
     <style>
     .video-js {
@@ -71,7 +71,7 @@
 
         player.on('ended', function() {
         
-            player.src({ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{ $oldSchool->video_id }}"});
+            player.src({ "type": "video/youtube", "src": "https://www.youtube.com/watch?v={{ $thpsNerds->video_id }}"});
             
             player.play();
             

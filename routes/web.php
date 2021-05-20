@@ -10,7 +10,6 @@ use App\Http\Controllers\ThpsNerdsController;
 use App\Http\Controllers\PlayVideosController;
 use App\Http\Controllers\AssignRolesController;
 use App\Http\Controllers\AbilitiesRoleController;
-use App\Models\ThpsNerds;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +30,11 @@ Route::get('/channel/thpspodcast', ThpsPodcast::class);
 
 Route::get('/channel/oldschool', [OldSchoolController::class, 'index']);
 
-Route::get('/channel/thps-nerds', [ThpsNerdsController::class, 'index']);
+Route::get('/channel/thpsnerds', [ThpsNerdsController::class, 'index']);
 
 Route::get('/videos/old-school/{id}', [OldSchoolController::class, 'show']);
+
+Route::get('/videos/thps-nerds/{id}', [ThpsNerdsController::class, 'show']);
 
 Route::get('/videos/keyword/{keyword}', [PlayVideosController::class, 'keyword']);
 
@@ -70,11 +71,15 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
 
     Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
     
-    Route::post('/old-school', [OldSchoolController::class, 'store']);
+    Route::get('/oldschool', [OldSchoolController::class, 'create'])->name('create.oldschool');
 
-/*     Route::post('/thps-nerds', [ThpsNerdsController::class, 'store']);
+    Route::get('/thpsnerds', [ThpsNerdsController::class, 'create'])->name('create.thpsnerds');
+    
+    Route::post('/oldschool', [OldSchoolController::class, 'store']);
 
-    Route::delete('/removeNerd/{id}', [ThpsNerdsController::class, 'destroy']); */
+    Route::post('/thpsnerds', [ThpsNerdsController::class, 'store']);
+
+    Route::delete('/removeNerd/{id}', [ThpsNerdsController::class, 'destroy']);
 
     Route::delete('/removeOldSchool/{id}', [OldSchoolController::class, 'destroy']);
     

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Banner;
 use App\Models\Ability;
 use App\Models\OldSchool;
+use App\Models\ThpsNerds;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -48,7 +49,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('abilities', Ability::get());
         });
 
-        View::composer(['components.modal-banner', 'components.tabs-banner'], function ($view) {
+        View::composer(['components.modal-banner'], function ($view) {
             $view->with('banner', Banner::get());
         });
 
@@ -56,7 +57,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('banner', Banner::first());
         });
 
-        View::composer(['components.tabs-channels', 'admin.uploads.index'], function ($view) {
+        View::composer(['admin.uploads.index'], function ($view) {
+            $view->with('thpsNerds', ThpsNerds::get());
             $view->with('oldSchool', OldSchool::get());
         });
     }

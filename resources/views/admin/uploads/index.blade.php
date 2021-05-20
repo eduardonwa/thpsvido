@@ -3,8 +3,17 @@
 
         <div class="flex space-x-2">
             @can('upload_videos')
-                <a href="#upload" class="text-white">Channels</a>
-                <a href="#banner" class="text-white">Home Banner</a>
+                <div x-data="{ show: false }">
+                    <button x-on:click="show = ! show" class="text-white border-b-2 border-transparent hover:border-yellow-500">Channels</button>
+                    <a href="#banner" class="text-white border-b-2 border-transparent hover:border-yellow-500">Home Banner</a>
+
+                    <div x-show="show" class="my-4">
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.oldschool') }}">Old School</a>
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.thpsnerds') }}">THPS Nerds</a>
+                    </div>
+                </div>
+                
+                
             @endcan
         </div>
         
@@ -22,6 +31,8 @@
             </div>
         </div>
         @include('admin.uploads.oldschool.index')
+
+        @include('admin.uploads.thpsnerds.index')
     </div>
     
     <x-modal-upload name="upload">   

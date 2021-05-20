@@ -8,10 +8,10 @@
 
         <div class="p-2 mt-2">
 
-{{--             @foreach ($thpsNerds as $video)
+            @foreach ($thpsNerds as $video)
                 <h1>{{$video->title}}</h1>
                 <img src="{{$video->thumbnail}}" alt="">
-            @endforeach --}}
+            @endforeach
         </div>
             
     </div>

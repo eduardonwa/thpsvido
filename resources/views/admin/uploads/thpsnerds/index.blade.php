@@ -1,10 +1,10 @@
-@forelse ($oldSchool as $video)
+@forelse ($thpsNerds as $video)
     <ol class="h-auto rounded-md p-2 mt-4 mb-4 list-decimal">
         <li class="w-full h-auto flex items-center justify-between space-x-2 mb-4 text-white
                 border-b-2 rounded-sm border-gray-500 border-opacity-40
                 hover:bg-green-500 transition ease-in-out hover:bg-opacity-70"
         >
-            <a href="/videos/old-school/{{ $video->id }}">
+            <a href="/videos/thps-nerds/{{ $video->id }}">
                 <img 
                     src="{{ $video->thumbnail }}" 
                     alt="thumbnail vid" 
@@ -13,14 +13,13 @@
             </a>
 
             <div class="flex flex-col text-center m-4">
-                <p class="font-bold">{{ $video->game }}</p>
-                <p>{{ $video->title }}</p>
+                <p class="font-bold">{{ $video->title }}</p>
                 <p>{{ $video->category }}</p>
             </div>
 
             <form 
                 method="POST"
-                action="/admin/removeOldSchool/{{ $video->id }}"
+                action="/admin/removeNerd/{{ $video->id }}"
                 class="p-1"
             >
                 @csrf
@@ -37,10 +36,10 @@
         </li>
     </ol>
     @empty
-    <div class="text-white text-center mb-4">
+    <div class="text-white text-center">
         <p>
             <span>Nothing found for</span>
-            <span class="font-bold">Oldschool</span>
+            <span class="font-bold">THPS Nerds</span>
             <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#upload">upload something here</a>
         </p>
     </div>

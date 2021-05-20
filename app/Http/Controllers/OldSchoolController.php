@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\OldSchool;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class OldSchoolController extends Controller
@@ -43,7 +43,7 @@ class OldSchoolController extends Controller
             Storage::disk('s3')->put($fileNameToStore, fopen($request->file('thumbnail'), 'r+'), 'public');
         };
         
-        $oldSchoolObject = new OldSchool($oldSchool/* , $fileNameToStore */);
+        $oldSchoolObject = new OldSchool($oldSchool);
         $oldSchoolObject->save($oldSchool);
 
         return redirect('admin/uploads');

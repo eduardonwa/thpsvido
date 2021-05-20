@@ -18,6 +18,7 @@ class CreateThpsnerdsTable extends Migration
             $table->string('title');
             $table->string('thumbnail');
             $table->string('category')->nullable();
+            $table->string('author')->nullable();
             $table->text('video_id');
             $table->timestamps();
         });
