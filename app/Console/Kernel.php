@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\UpdateHomeBanner::class
+        UpdateHomeBanner::class
     ];
 
     /**
@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('banner:update')->weeklyOn(5, '13:00');
+        $schedule->command('banner:update')->weeklyOn(5, '13:15');
     }
 
     /**
