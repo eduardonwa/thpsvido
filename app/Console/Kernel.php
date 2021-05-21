@@ -25,7 +25,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('banner:update')->weeklyOn(5, '13:15');
+        $schedule->command('banner:update')
+            ->weeklyOn(5, '13:45')
+            ->timezone('America/Phoenix');
     }
 
     /**
