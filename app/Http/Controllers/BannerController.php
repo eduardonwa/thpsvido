@@ -21,4 +21,12 @@ class BannerController extends Controller
 
         return redirect('admin/uploads');
     }
+
+    public function destroy($id)
+    {
+        $banner = Banner::find($id);
+        $banner->delete();
+
+        return redirect('admin/uploads');
+    }
 }

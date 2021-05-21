@@ -4,12 +4,31 @@
         <div class="flex space-x-2">
             @can('upload_videos')
                 <div x-data="{ show: false }">
-                    <button x-on:click="show = ! show" class="text-white border-b-2 border-transparent hover:border-yellow-500">Channels</button>
+                    <button 
+                        x-on:click="show = ! show" 
+                        class="text-white border-b-2 border-transparent hover:border-yellow-500"
+                    >
+                        Channels
+                    </button>
+                    
                     <a href="#banner" class="text-white border-b-2 border-transparent hover:border-yellow-500">Home Banner</a>
 
-                    <div x-show="show" class="my-4">
-                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.oldschool') }}">Old School</a>
-                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.thpsnerds') }}">THPS Nerds</a>
+                    <div 
+                        x-show="show"
+                        class="my-4 flex space-x-8"
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform scale-90"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-90"
+                    >
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="#modal-oldschool">
+                            <img class="w-28 p-2 transition ease-in-out rounded-md border border-transparent hover:border-green-500" src="{{ asset('/img/categories/oldschool.svg') }}" alt="">
+                        </a>
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="#modal-thpsnerds">
+                            <img class="w-28 p-2 transition ease-in-out rounded-md border border-transparent hover:border-green-500" src="{{ asset('/img/categories/thps-nerds.svg') }}" alt="">
+                        </a>
                     </div>
                 </div>
                 
@@ -20,16 +39,6 @@
     </x-slot>
     
     <div class="py-12">
-
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                @can('view_videos')
-                    <div class="p-6 bg-gray-500 text-gray-100">
-                        List of uploaded resources
-                    </div>
-                @endcan
-            </div>
-        </div>
         @include('admin.uploads.oldschool.index')
 
         @include('admin.uploads.thpsnerds.index')
@@ -40,5 +49,12 @@
 
     <x-modal-banner name="banner">   
     </x-modal-banner>
+
+    <x-modal-channel-oldschool name="modal-oldschool">   
+    </x-modal-channel-oldschool>
+
+    
+    <x-modal-channel-thpsnerds name="modal-thpsnerds">   
+    </x-modal-channel-thpsnerds>
     
 </x-app-layout>

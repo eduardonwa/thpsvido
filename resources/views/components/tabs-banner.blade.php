@@ -9,17 +9,43 @@
         class="m-4"
     >               
         @foreach ($banner as $banner)
-            <ol class="h-auto rounded-md p-2 mt-4 mb-4 list-decimal">
-                <li class="w-full h-auto flex items-center space-x-2 mb-4 text-white
+            <ul class="h-auto rounded-md p-2 mt-4 mb-4">
+                <li class="w-full h-auto flex items-center justify-between space-x-2 mb-4 text-white
                            border-b-2 rounded-sm border-gray-500 border-opacity-40"
                 >
-                    <img src="" alt="thumbnail vid" class="w-32 h-auto pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100">
+                    <img src="" alt="thumbnail vid" class="border w-32 pl-1 py-1 cursor-pointer transition ease-in-out opacity-1 lg:opacity-75 hover:opacity-100">
                     <div class="flex flex-col align-center">
                         <p class="font-bold">{{ $banner->video_title }}</p>
-                        <a class="mb-4" href="/{{ $banner->play_now_uri }}">Watch</a>
+                        <p class="text-sm">{{$banner->proskaters}}</p>
+                        
+                        <div class="space-y-2 py-2">
+                            <p class="text-sm">{{$banner->play_now_uri}}</p>
+                            <p class="text-sm">{{$banner->youtube_url}}</p>
+                        </div>
+
+                        <div class="flex space-x-3 pb-3">
+                            <a class="{{-- mx-auto text-center w-14 --}} my-auto h-7 rounded-sm p-1 text-sm text-white font-semibold hover:bg-black transition ease-in-out bg-blue-600" href="/{{ $banner->play_now_uri }}">Watch</a>
+                            <form 
+                                method="POST"
+                                action="remove-banner/{{$banner->id}}"
+                                class="p-1"
+                            >
+                                @csrf
+                                @method('DELETE')
+    
+                                <button
+                                    type="submit"
+                                    class="rounded-sm p-1 text-sm text-white font-semibold hover:bg-black transition ease-in-out bg-red-600"
+                                    onclick="return confirm('Are you sure you want to delete this?')"
+                                >
+                                    Remove
+                                </button>
+                            </form>
+                        </div> {{-- watch & remove buttons --}}
+
                     </div>
                 </li>
-            </ol>
+            </ul>
         @endforeach
     </div> {{-- queue --}}
             

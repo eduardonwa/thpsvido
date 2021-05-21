@@ -40,7 +40,7 @@
         <p>
             <span>Nothing found for</span>
             <span class="font-bold">THPS Nerds</span>
-            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#upload">upload something here</a>
+            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#modal-thpsnerds">upload something!</a>
         </p>
     </div>
 @endforelse

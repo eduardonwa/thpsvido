@@ -85,6 +85,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
     
     Route::post('/publish-banner', [BannerController::class, 'store']);
 
+    Route::delete('/remove-banner/{id}', [BannerController::class, 'destroy']);
+
 });
 
 

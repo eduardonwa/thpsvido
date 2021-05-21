@@ -41,7 +41,7 @@
         <p>
             <span>Nothing found for</span>
             <span class="font-bold">Oldschool</span>
-            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#upload">upload something here</a>
+            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#modal-oldschool">upload something!</a>
         </p>
     </div>
 @endforelse
