@@ -13,7 +13,8 @@ class ThpsNerds extends Model
         'title',
         'thumbnail',
         'category',
-        'video_id'
+        'video_id',
+        'author'
     ];
 
     protected $table = 'thpsnerds';
