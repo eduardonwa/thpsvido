@@ -71,9 +71,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function (){
 
     Route::post('user/{user}/unassignRole', [AssignRolesController::class, 'unassignRole'])->name('unassignRole');
     
-    Route::get('/oldschool', [OldSchoolController::class, 'create'])->name('create.oldschool');
+    Route::get('/oldschool/create', [OldSchoolController::class, 'create'])->name('create.oldschool');
 
-    Route::get('/thpsnerds', [ThpsNerdsController::class, 'create'])->name('create.thpsnerds');
+    Route::get('/thpsnerds/create', [ThpsNerdsController::class, 'create'])->name('create.thpsnerds');
     
     Route::post('/oldschool', [OldSchoolController::class, 'store']);
 

@@ -27,12 +27,12 @@ class ThpsNerdsController extends Controller
 
     public function store(Request $request)
     {
-        $thpsNerds = request()->validate([
+        $thpsNerds = $request->validate([
             'title' => ['required'],
             'thumbnail' => ['required'],
             'category' => ['required'],
             'video_id' => ['required'],
-            'author' => ['nullable']
+            'author' => ['required']
         ]);
 
         if($request->hasFile('thumbnail')) {

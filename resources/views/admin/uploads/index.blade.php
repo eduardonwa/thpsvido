@@ -23,10 +23,10 @@
                         x-transition:leave-start="opacity-100 transform scale-100"
                         x-transition:leave-end="opacity-0 transform scale-90"
                     >
-                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="#modal-oldschool">
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.oldschool') }}">
                             <img class="w-28 p-2 transition ease-in-out rounded-md border border-transparent hover:border-green-500" src="{{ asset('/img/categories/oldschool.svg') }}" alt="">
                         </a>
-                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="#modal-thpsnerds">
+                        <a class="text-white hover:text-yellow-500 transition ease-in-out" href="{{ route('create.thpsnerds') }}">
                             <img class="w-28 p-2 transition ease-in-out rounded-md border border-transparent hover:border-green-500" src="{{ asset('/img/categories/thps-nerds.svg') }}" alt="">
                         </a>
                     </div>
@@ -49,12 +49,5 @@
 
     <x-modal-banner name="banner">   
     </x-modal-banner>
-
-    <x-modal-channel-oldschool name="modal-oldschool">   
-    </x-modal-channel-oldschool>
-
-    
-    <x-modal-channel-thpsnerds name="modal-thpsnerds">   
-    </x-modal-channel-thpsnerds>
     
 </x-app-layout>

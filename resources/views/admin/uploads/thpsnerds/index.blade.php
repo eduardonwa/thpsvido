@@ -15,6 +15,7 @@
             <div class="flex flex-col text-center m-4">
                 <p class="font-bold">{{ $video->title }}</p>
                 <p>{{ $video->category }}</p>
+                <p>{{ $video->author }}</p>
             </div>
 
             <form 
@@ -36,11 +37,11 @@
         </li>
     </ol>
     @empty
-    <div class="text-white text-center">
+    <div class="text-gray-400 text-center">
         <p>
             <span>Nothing found for</span>
-            <span class="font-bold">THPS Nerds</span>
-            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#modal-thpsnerds">upload something!</a>
+            <span class="font-bold text-white">THPS Nerds</span>
+            <a class="text-underline transition ease-in-out hover:text-white" href="{{ route('create.thpsnerds') }}">upload something!</a>
         </p>
     </div>
 @endforelse

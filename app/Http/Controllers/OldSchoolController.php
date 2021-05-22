@@ -27,12 +27,12 @@ class OldSchoolController extends Controller
 
     public function store(Request $request)
     {
-        $oldSchool = request()->validate([
+        $oldSchool = $request->validate([
             'game' => ['required'],
             'title' => ['required'],
             'thumbnail' => ['required'],
             'category' => ['required'],
-            'video_id' => ['nullable']
+            'video_id' => ['required']
         ]);
 
         if($request->hasFile('thumbnail')) {

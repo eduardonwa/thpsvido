@@ -37,11 +37,11 @@
         </li>
     </ol>
     @empty
-    <div class="text-white text-center mb-4">
+    <div class="text-gray-400 text-center mb-4">
         <p>
             <span>Nothing found for</span>
-            <span class="font-bold">Oldschool</span>
-            <a class="text-underline transition ease-in-out hover:text-yellow-500" href="#modal-oldschool">upload something!</a>
+            <span class="font-bold text-white">Oldschool</span>
+            <a class="text-underline transition ease-in-out hover:text-white" href="{{ route('create.oldschool') }}">upload something!</a>
         </p>
     </div>
 @endforelse
