@@ -1,7 +1,7 @@
-<div x-data="{ tab: 'queue' }">
+<div x-data="{ tab: 'add' }">
     <div class="shadow-lg text-sm rounded-md bg-gray-600 p-2 text-white flex justify-evenly align-center">
         <button :class="{ 'text-yellow-500': tab === 'queue' }" x-on:click="tab = 'queue'">Queue</button>
-        <button :class="{ 'text-yellow-500': tab === 'publish' }" x-on:click="tab = 'publish'">Add</button>
+        <button :class="{ 'text-yellow-500': tab === 'add' }" x-on:click="tab = 'add'">Add</button>
     </div>
 
     <div 
@@ -50,7 +50,7 @@
     </div> {{-- queue --}}
             
     <div 
-        x-show="tab === 'publish'"
+        x-show="tab === 'add'"
         class="mt-4"
     >
         <form 
@@ -131,6 +131,6 @@
             </button>
 
         </form>
-    </div> {{-- publish --}}
+    </div> {{-- add --}}
 
 </div>

@@ -41,7 +41,7 @@
         <p>
             <span>Nothing found for</span>
             <span class="font-bold text-white">THPS Nerds</span>
-            <a class="text-underline transition ease-in-out hover:text-white" href="{{ route('create.thpsnerds') }}">upload something!</a>
+            <a class="text-underline transition ease-in-out hover:text-white underline" href="{{ route('create.thpsnerds') }}">upload something!</a>
         </p>
     </div>
 @endforelse

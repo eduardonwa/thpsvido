@@ -41,7 +41,7 @@
         <p>
             <span>Nothing found for</span>
             <span class="font-bold text-white">Oldschool</span>
-            <a class="text-underline transition ease-in-out hover:text-white" href="{{ route('create.oldschool') }}">upload something!</a>
+            <a class="text-underline transition ease-in-out underline hover:text-white" href="{{ route('create.oldschool') }}">upload something!</a>
         </p>
     </div>
 @endforelse

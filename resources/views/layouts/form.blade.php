@@ -14,5 +14,6 @@
 <body class="bg-gray-700">
     @yield('form-header')
     @yield('form')
+    @yield('script')
 </body>
 </html>

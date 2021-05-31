@@ -37,8 +37,6 @@
                             </svg>
                         </a> <!-- close button -->
                     </div>
-                
-                    {{-- livewire upload --}}
                     
                 </div>
             </div>
